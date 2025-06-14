@@ -2,14 +2,6 @@
 	"folders": [
 		{
 			"path": "."
-		},
-		{
-			"name": "02ws",
-			"path": "02ws"
-		},
-		{
-			"name": "Jws",
-			"path": "Jws"
 		}
 	],
 	"settings": {
