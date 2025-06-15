@@ -1,0 +1,244 @@
+[ @file = "D:\web\site\02wsgarmin\WebRequestGlance\source\WidgetGlanceView.mc"; @line = 7; @symbol_importdef<0> = [Toybox,7,7,13]; @symbol_importdef<1> = [Graphics,7,14,22]; ]
+import Toybox.Graphics;
+[ @file = "D:\web\site\02wsgarmin\WebRequestGlance\source\WidgetGlanceView.mc"; @line = 8; @symbol_importdef<0> = [Toybox,8,7,13]; @symbol_importdef<1> = [Lang,8,14,18]; ]
+import Toybox.Lang;
+[ @file = "D:\web\site\02wsgarmin\WebRequestGlance\source\WidgetGlanceView.mc"; @line = 9; @symbol_importdef<0> = [Toybox,9,7,13]; @symbol_importdef<1> = [WatchUi,9,14,21]; ]
+import Toybox.WatchUi;
+//! Shows the web request result
+[ @file = "D:\web\site\02wsgarmin\WebRequestGlance\source\WidgetGlanceView.mc"; @line = 13; glance = true; @symbol_classdef = [WidgetGlanceView,13,6,22]; @symbol_extends<0> = [WatchUi,13,31,38]; @symbol_extends<1> = [GlanceView,13,39,49]; ]
+class WidgetGlanceView extends WatchUi.GlanceView {
+    [ @file = "D:\web\site\02wsgarmin\WebRequestGlance\source\WidgetGlanceView.mc"; @line = 13; ]
+    <init> {
+    }
+    [ @file = "D:\web\site\02wsgarmin\WebRequestGlance\source\WidgetGlanceView.mc"; @line = 13; ]
+    static
+    <init> {
+    }
+    [ @file = "D:\web\site\02wsgarmin\WebRequestGlance\source\WidgetGlanceView.mc"; @line = 14; @position = 16; @symbol_vardef = [_message,14,16,24]; @symbol_type<0> = [String,14,28,34]; ]
+    private
+    var _message as String = "Press menu or\nselect button";
+    //! Constructor
+    [ @file = "D:\web\site\02wsgarmin\WebRequestGlance\source\WidgetGlanceView.mc"; @line = 17; @symbol_functiondef = [initialize,17,20,30]; ]
+    public
+    function initialize() as Void {
+D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_17_33_19_4_start:
+[ "D:\web\site\02wsgarmin\WebRequestGlance\source\WidgetGlanceView.mc" 18 8 ]
+        symbol [ WatchUi %tmp.1 18 8 15 ];
+        %tmp.1 = getm $.Toybox.WatchUi;
+        symbol [ GlanceView %tmp.2 18 16 26 ];
+        %tmp.2 = getv %tmp.1 :GlanceView;
+        symbol [ initialize %tmp.3 18 27 37 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_17_33_19_4_stop:
+    }
+    //! Load your resources here
+    //! @param dc Device context
+    [ @file = "D:\web\site\02wsgarmin\WebRequestGlance\source\WidgetGlanceView.mc"; @line = 23; @symbol_functiondef = [onLayout,23,20,28]; @symbol_param<0> = [dc,23,29,31]; @symbol_param<0>_type<0> = [Dc,23,35,37]; ]
+    public
+    function onLayout(dc as Dc) as Void {
+    }
+    //! Restore the state of the app and prepare the view to be shown
+    [ @file = "D:\web\site\02wsgarmin\WebRequestGlance\source\WidgetGlanceView.mc"; @line = 27; @symbol_functiondef = [onShow,27,20,26]; ]
+    public
+    function onShow() as Void {
+    }
+    //! Update the view
+    //! @param dc Device Context
+    [ @file = "D:\web\site\02wsgarmin\WebRequestGlance\source\WidgetGlanceView.mc"; @line = 32; @symbol_functiondef = [onUpdate,32,20,28]; @symbol_param<0> = [dc,32,29,31]; @symbol_param<0>_type<0> = [Dc,32,35,37]; ]
+    public
+    function onUpdate(dc as Dc) as Void {
+D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_32_47_37_4_start:
+[ "D:\web\site\02wsgarmin\WebRequestGlance\source\WidgetGlanceView.mc" 33 8 ]
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 33 8 10 ];
+        symbol [ setColor %tmp.2 33 11 19 ];
+        %tmp.2 = getv function %tmp.1 :setColor;
+        symbol [ Graphics %tmp.3 33 20 28 ];
+        %tmp.3 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.4 33 29 40 ];
+        %tmp.4 = getv %tmp.3 :COLOR_WHITE;
+        symbol [ Graphics %tmp.5 33 42 50 ];
+        %tmp.5 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.6 33 51 62 ];
+        %tmp.6 = getv %tmp.5 :COLOR_BLACK;
+        invoke %tmp.1 %tmp.2(%tmp.4, %tmp.6);
+[ "D:\web\site\02wsgarmin\WebRequestGlance\source\WidgetGlanceView.mc" 34 8 ]
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 34 8 10 ];
+        symbol [ clear %tmp.8 34 11 16 ];
+        %tmp.8 = getv function %tmp.7 :clear;
+        invoke %tmp.7 %tmp.8();
+[ "D:\web\site\02wsgarmin\WebRequestGlance\source\WidgetGlanceView.mc" 35 8 ]
+        %tmp.9 = lgetv %dc;
+        symbol [ dc %tmp.9 35 8 10 ];
+        symbol [ drawText %tmp.10 35 11 19 ];
+        %tmp.10 = getv function %tmp.9 :drawText;
+        %tmp.11 = lgetv %dc;
+        symbol [ dc %tmp.11 35 20 22 ];
+        symbol [ getWidth %tmp.12 35 23 31 ];
+        %tmp.12 = getv function %tmp.11 :getWidth;
+        %tmp.13 = invoke %tmp.11 %tmp.12();
+        %tmp.14 = 2;
+        %tmp.15 = div %tmp.13 %tmp.14;
+        %tmp.16 = lgetv %dc;
+        symbol [ dc %tmp.16 35 39 41 ];
+        symbol [ getHeight %tmp.17 35 42 51 ];
+        %tmp.17 = getv function %tmp.16 :getHeight;
+        %tmp.18 = invoke %tmp.16 %tmp.17();
+        %tmp.19 = 2;
+        %tmp.20 = div %tmp.18 %tmp.19;
+        symbol [ Graphics %tmp.21 35 59 67 ];
+        %tmp.21 = getm $.Toybox.Graphics;
+        symbol [ FONT_TINY %tmp.22 35 68 77 ];
+        %tmp.22 = getv %tmp.21 :FONT_TINY;
+        symbol [ _message %tmp.24 35 79 87 ];
+        %tmp.24 = getv ? :_message;
+        symbol [ Graphics %tmp.25 35 89 97 ];
+        %tmp.25 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.26 35 98 117 ];
+        %tmp.26 = getv %tmp.25 :TEXT_JUSTIFY_CENTER;
+        symbol [ Graphics %tmp.27 35 120 128 ];
+        %tmp.27 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_VCENTER %tmp.28 35 129 149 ];
+        %tmp.28 = getv %tmp.27 :TEXT_JUSTIFY_VCENTER;
+        %tmp.29 = bitor %tmp.26 %tmp.28;
+        invoke %tmp.9 %tmp.10(%tmp.15, %tmp.20, %tmp.22, %tmp.24, %tmp.29);
+D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_32_47_37_4_stop:
+    }
+    //! Called when this View is removed from the screen. Save the
+    //! state of your app here.
+    [ @file = "D:\web\site\02wsgarmin\WebRequestGlance\source\WidgetGlanceView.mc"; @line = 41; @symbol_functiondef = [onHide,41,20,26]; ]
+    public
+    function onHide() as Void {
+    }
+    //! Show the result or status of the web request
+    //! @param args Data from the web request, or error message
+    [ @file = "D:\web\site\02wsgarmin\WebRequestGlance\source\WidgetGlanceView.mc"; @line = 46; @symbol_functiondef = [onReceive,46,20,29]; @symbol_param<0> = [args,46,30,34]; @symbol_param<0>_type<0> = [Dictionary,46,38,48]; @symbol_param<0>_type<1> = [String,46,52,58]; ]
+    public
+    function onReceive(args as Dictionary or String or Null) as Void {
+D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_46_76_58_4_start:
+[ "D:\web\site\02wsgarmin\WebRequestGlance\source\WidgetGlanceView.mc" 47 8 ]
+D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_47_8_56_8_if_stmt:
+        %tmp.1 = lgetv %args;
+        symbol [ args %tmp.1 47 12 16 ];
+        symbol [ String %tmp.3 47 28 34 ];
+        %tmp.3 = getv ? :String;
+        %tmp.4 = isa %tmp.1 %tmp.3;
+        bf %tmp.4 @D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_47_8_56_8_if_false;
+D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_47_8_56_8_if_true:
+D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_47_36_49_8_start:
+[ "D:\web\site\02wsgarmin\WebRequestGlance\source\WidgetGlanceView.mc" 48 12 ]
+        %tmp.5 = lgetv %args;
+        symbol [ args %tmp.5 48 23 27 ];
+        %tmp.6 = as %tmp.5 { (String) };
+        symbol [ _message ? 48 12 20 ];
+        putv self :_message %tmp.6;
+D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_47_36_49_8_stop:
+        goto @D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_47_8_56_8_if_end;
+D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_47_8_56_8_if_false:
+[ "D:\web\site\02wsgarmin\WebRequestGlance\source\WidgetGlanceView.mc" 49 15 ]
+D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_49_15_56_8_if_stmt:
+        %tmp.7 = lgetv %args;
+        symbol [ args %tmp.7 49 19 23 ];
+        %tmp.8 = as %tmp.7 { (!String) };
+        symbol [ Dictionary %tmp.10 49 35 45 ];
+        %tmp.10 = getv ? :Dictionary;
+        %tmp.11 = isa %tmp.8 %tmp.10;
+        bf %tmp.11 @D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_49_15_56_8_if_end;
+D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_49_15_56_8_if_true:
+D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_49_47_56_8_start:
+[ "D:\web\site\02wsgarmin\WebRequestGlance\source\WidgetGlanceView.mc" 51 12 ]
+        [ "D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_49_47_56_8_start" "D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_49_47_56_8_stop" ]
+        %keys.1 = local;
+        symbol [ keys %keys.1 51 16 20 ];
+        %tmp.12 = lgetv %args;
+        symbol [ args %tmp.12 51 23 27 ];
+        %tmp.13 = as %tmp.12 { (Dictionary) && (!String) };
+        symbol [ keys %tmp.14 51 28 32 ];
+        %tmp.14 = getv function %tmp.13 :keys;
+        %tmp.15 = invoke %tmp.13 %tmp.14();
+        lputv %keys.1 %tmp.15;
+        symbol [ keys %keys.1 51 16 20 ];
+[ "D:\web\site\02wsgarmin\WebRequestGlance\source\WidgetGlanceView.mc" 52 12 ]
+        %tmp.16 = "";
+        symbol [ _message ? 52 12 20 ];
+        putv self :_message %tmp.16;
+[ "D:\web\site\02wsgarmin\WebRequestGlance\source\WidgetGlanceView.mc" 53 12 ]
+        for @D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_53_12_55_12_for_test @D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_53_12_55_12_for_incr @D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_53_12_55_12_for_end;
+D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_53_12_55_12_for_init:
+        [ "D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_53_12_55_12_for_begin" "D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_53_12_55_12_for_end" ]
+        %i.2 = local;
+        symbol [ i %i.2 53 21 22 ];
+        %tmp.17 = 0;
+        lputv %i.2 %tmp.17;
+        symbol [ i %i.2 53 21 22 ];
+D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_53_12_55_12_for_test:
+        %tmp.18 = lgetv %i.2;
+        symbol [ i %tmp.18 53 28 29 ];
+        %tmp.19 = lgetv %keys.1;
+        symbol [ keys %tmp.19 53 32 36 ];
+        symbol [ size %tmp.20 53 37 41 ];
+        %tmp.20 = getv function %tmp.19 :size;
+        %tmp.21 = invoke %tmp.19 %tmp.20();
+        %tmp.22 = lt %tmp.18 %tmp.21;
+        bf %tmp.22 @D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_53_12_55_12_for_end;
+D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_53_12_55_12_for_begin:
+D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_53_50_55_12_start:
+[ "D:\web\site\02wsgarmin\WebRequestGlance\source\WidgetGlanceView.mc" 54 16 ]
+        symbol [ _message %tmp.23 54 16 24 ];
+        %tmp.23 = getv self :_message;
+        symbol [ Lang %tmp.24 54 28 32 ];
+        %tmp.24 = getm $.Toybox.Lang;
+        symbol [ format %tmp.25 54 33 39 ];
+        %tmp.25 = getv function %tmp.24 :format;
+        %tmp.26 = "$1$: $2$\n";
+        %tmp.27 = newa 2;
+        %tmp.28 = lgetv %keys.1;
+        symbol [ keys %tmp.28 54 55 59 ];
+        %tmp.29 = lgetv %i.2;
+        symbol [ i %tmp.29 54 60 61 ];
+        %tmp.30 = agetv %tmp.28 %tmp.29;
+        %tmp.31 = dup %tmp.27;
+        %tmp.32 = aputv %tmp.31 0 %tmp.30;
+        %tmp.33 = lgetv %args;
+        symbol [ args %tmp.33 54 64 68 ];
+        %tmp.34 = as %tmp.33 { (Dictionary) && (!String) };
+        %tmp.35 = lgetv %keys.1;
+        symbol [ keys %tmp.35 54 69 73 ];
+        %tmp.36 = lgetv %i.2;
+        symbol [ i %tmp.36 54 74 75 ];
+        %tmp.37 = agetv %tmp.35 %tmp.36;
+        %tmp.38 = agetv %tmp.34 %tmp.37;
+        %tmp.39 = dup %tmp.32;
+        %tmp.40 = aputv %tmp.39 1 %tmp.38;
+        %tmp.41 = invoke %tmp.24 %tmp.25(%tmp.26, %tmp.40);
+        %tmp.42 = add %tmp.23 %tmp.41;
+        symbol [ _message ? 54 16 24 ];
+        putv self :_message dup %tmp.42;
+D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_53_50_55_12_stop:
+D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_53_12_55_12_for_incr:
+[ "D:\web\site\02wsgarmin\WebRequestGlance\source\WidgetGlanceView.mc" 53 ]
+        %tmp.45 = lgetv %i.2;
+        symbol [ i %tmp.45 53 45 46 ];
+        %tmp.46 = add %tmp.45 1;
+        lputv %i.2 %tmp.46;
+        symbol [ i %i.2 53 45 46 ];
+        goto @D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_53_12_55_12_for_test;
+D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_53_12_55_12_for_end:
+D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_49_47_56_8_stop:
+        goto @D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_49_15_56_8_if_end;
+D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_49_15_56_8_if_end:
+D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_47_8_56_8_if_end:
+[ "D:\web\site\02wsgarmin\WebRequestGlance\source\WidgetGlanceView.mc" 57 8 ]
+        symbol [ WatchUi %tmp.47 57 8 15 ];
+        %tmp.47 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.48 57 16 29 ];
+        %tmp.48 = getv function %tmp.47 :requestUpdate;
+        invoke %tmp.47 %tmp.48();
+D_web_site_02wsgarmin_WebRequestGlance_source_WidgetGlanceView_mc_46_76_58_4_stop:
+    }
+}
+[ @file = "D:\web\site\02wsgarmin\WebRequestGlance\source\WidgetGlanceView.mc"; @line = 7; ]
+<init> {
+}

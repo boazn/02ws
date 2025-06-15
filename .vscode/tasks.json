@@ -8,8 +8,8 @@
             "type": "shell",
             "command": "d:\\web\\site\\connectiqsdk\\bin\\Simulate.bat",
             "args": [
-                "${workspaceFolder}\\Build\\02ws.prg",
-                "fr645m"
+                "${workspaceFolder}\\bin\\02ws.prg",
+                "fenix7pro"
             ],
             "problemMatcher": []
         },
@@ -23,12 +23,12 @@
                 "-jar",
                 "d:\\web\\site\\connectiqsdk\\bin\\monkeybrains.jar",
                 "-o",
-                "${workspaceFolder}\\Build\\02ws.prg",
+                "${workspaceFolder}\\bin\\02ws.prg",
                 "",
                 "-y",
                 "d:\\web\\site\\02wsgarmin\\02wsgarmin_key.der",
                 "-d",
-                "fr645m",
+                "fenix7pro",
                 "",
                 "",
                 "",

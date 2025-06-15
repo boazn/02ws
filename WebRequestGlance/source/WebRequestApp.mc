@@ -35,9 +35,9 @@ class WebRequestApp extends Application.AppBase {
 
     //! Return the initial view for the app
     //! @return Array Pair [View, Delegate]
-    public function getInitialView() as Array<Views or InputDelegates>? {
+    public function getInitialView() as [Views] or [Views, InputDelegates] {
         var view = new $.WebRequestView();
         var delegate = new $.WebRequestDelegate(view.method(:onReceive));
-        return [view, delegate] as Array<Views or InputDelegates>;
+        return [view, delegate];
     }
 }

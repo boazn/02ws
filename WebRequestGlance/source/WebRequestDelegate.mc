@@ -19,7 +19,7 @@ class WebRequestDelegate extends WatchUi.BehaviorDelegate {
         WatchUi.BehaviorDelegate.initialize();
         _notify = handler;
         makeRequest();
-        return true;
+        
     }
 
     //! On a menu event, make a web request
