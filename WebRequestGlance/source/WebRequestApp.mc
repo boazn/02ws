@@ -29,7 +29,6 @@ class WebRequestApp extends Application.AppBase {
     (:glance)
     function getGlanceView() {
         var view = new $.WidgetGlanceView();
-        var delegate = new $.WebRequestDelegate(view.method(:onReceive));
         return [ view ];
     }
 

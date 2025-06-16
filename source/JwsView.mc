@@ -1,5 +1,6 @@
 import Toybox.Graphics;
 import Toybox.WatchUi;
+import Toybox.Lang;
 var page = 1;
 class JwsView extends WatchUi.View {
     hidden var mMessage = "02WS\nPress menu or\nselect button";
@@ -22,7 +23,7 @@ class JwsView extends WatchUi.View {
     }
 
     // Load your resources here
-    function onLayout(dc) {
+    function onLayout(dc as Dc) as Void {
         setLayout( Rez.Layouts.MainLayout( dc ) );
     }
 
@@ -66,19 +67,34 @@ class JwsView extends WatchUi.View {
 
     function onReceive(args) {
         //System.println("JwsView onReceive:"+args);
-        if (args instanceof Dictionary) {
-              
-            mDate = getDisplayString(args["current"]["daytime" + mlang]) + "";
-            if (args["current"]["islight"].equals("1")){
-                mTempTitle = getDisplayString(args["current"]["temp"]) + StringUtil.utf8ArrayToString([0xC2,0xB0]) + " - " + getDisplayString(args["current"]["temp2"] + StringUtil.utf8ArrayToString([0xC2,0xB0]));
+       if (args instanceof Dictionary) {
+            var Mountain = [
+                :Mountain0,
+                :Mountain1
+            ];
+           var Mountain_str = loadResource(Rez.Strings[Mountain[mlang]]);
+           var Valley = [
+                :Valley0,
+                :Valley1
+            ];
+           var Valley_str = loadResource(Rez.Strings[Valley[mlang]]);
+            var mCurrent = args.get("current") as Dictionary;
+            mDate = getDisplayString(mCurrent.get("date"+mlang)) + "";
+            if (mCurrent.get("islight").equals("1")){
+                mTempTitle = getDisplayString(mCurrent.get("temp")) + StringUtil.utf8ArrayToString([0xC2,0xB0]) + " " + Mountain_str + " \n " + getDisplayString(mCurrent.get("temp2") + StringUtil.utf8ArrayToString([0xC2,0xB0])) + " " + Valley_str;
             }
             else{
-                mTempTitle = getDisplayString(args["current"]["temp"]) + StringUtil.utf8ArrayToString([0xC2,0xB0]) + " - " + getDisplayString(args["current"]["temp3"] + StringUtil.utf8ArrayToString([0xC2,0xB0]));
+                mTempTitle = getDisplayString(mCurrent.get("temp")) + StringUtil.utf8ArrayToString([0xC2,0xB0]) + " " + Mountain_str + " \n " + getDisplayString(mCurrent.get("temp3") + StringUtil.utf8ArrayToString([0xC2,0xB0])) + " " + Valley_str;
             }
-                
-            mSigWeather = getSigWeatherDisplayString(args["sigRunWalkweather"], mlang);
-            if (!args["current"]["rainchance"].equals("0")){
-              mRain = args["current"]["rainchance"] + "% " + loadResource(Rez.Strings.rain);
+            var sigRunWalk =  args.get("sigRunWalkweather") as Dictionary;   
+            mSigWeather = getSigWeatherDisplayString(sigRunWalk, mlang);
+            if (!mCurrent.get("rainchance").equals("0")){
+                var rainchance = [
+                :rainchance0,
+                :rainchance1
+            ];
+           var rainchance_str = loadResource(Rez.Strings[rainchance[mlang]]);
+              mRain = mCurrent.get("rainchance") + "% " + rainchance_str;
             }
             
         }
@@ -92,7 +108,7 @@ class JwsView extends WatchUi.View {
         WatchUi.requestUpdate();
     }
 
-      //Get a displayable string for the current object
+       //Get a displayable string for the current object
     function getDisplayString(item) {
         var displayString = "";
         if(item instanceof Toybox.Lang.Array) {
@@ -109,13 +125,13 @@ class JwsView extends WatchUi.View {
   
 
     function changeBitmap(dc) {
-        var bitmap = findDrawableById("logoc") as Toybox.WatchUi.Bitmap;
+        var bitmap = findDrawableById("logoc") as Bitmap;
         bitmap.setBitmap(Rez.Drawables.logoc_eng);
          View.onUpdate( dc );
     }
 
     //Get a display string for an array
-    function getSigWeatherDisplayString(array, lang) {
+    function getSigWeatherDisplayString(array as Dictionary, lang) {
         var displayString = "";
         for(var index = 1; index < array.size(); index++) {
             if (index == 1){
@@ -133,7 +149,7 @@ class JwsView extends WatchUi.View {
     }
 
     //Get a display string for an array
-    function getArrayDisplayString(array) {
+    function getArrayDisplayString(array as Array) {
          var displayString = "";
         displayString += "[\n";
         for(var index = 0; index < array.size(); index++) {
@@ -152,15 +168,15 @@ class JwsView extends WatchUi.View {
     }
 
     //Get a display string for a dictionary
-    function getSigWeatherDictionaryDisplayString(dictionary, lang) {
+    function getSigWeatherDictionaryDisplayString(dictionary as Dictionary, lang) {
         var displayString = "";
-        displayString += dictionary["sigtitle"+lang] + " \n" +  dictionary["sigext"+lang];
+        displayString += dictionary["sigtitle"+lang];
      
         return displayString;
     }
 
     //Get a display string for a dictionary
-    function getDictionaryDisplayString(dictionary) {
+    function getDictionaryDisplayString(dictionary as Dictionary) {
         var displayString = "\n";
         displayString += "{";
         for(var index = 0; index < dictionary.keys().size(); index++) {

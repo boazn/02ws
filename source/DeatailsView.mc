@@ -4,9 +4,10 @@
 // Application Developer Agreement.
 //
 
-using Toybox.WatchUi;
-using Toybox.Graphics;
-using Toybox.Application.Storage;
+import Toybox.Application.Storage;
+import Toybox.Graphics;
+import Toybox.WatchUi;
+import Toybox.Lang;
 class DetailsView extends WatchUi.View {
     hidden var mMessage = "Press menu button";
     hidden var mDate = "";
@@ -46,27 +47,25 @@ class DetailsView extends WatchUi.View {
     }
 
     // Update the view
-    function onUpdate(dc) {
+    function onUpdate(dc as Dc) {
         System.println("DetailsView onUpdate:");
-        var sigweatherText = View.findDrawableById("sigweatherTextDetailes") as Toybox.WatchUi.Text;
+        var sigweatherText = View.findDrawableById("sigweatherTextDetails") as Text;
+        var myStats = System.getSystemStats();
         var jwsjson = "";
-           if (Toybox.Application has :Storage){
-                jwsjson = Storage.getValue("02wsjson") as Toybox.Lang.String ;
+           if ((Toybox.Application has :Storage)&&(myStats.freeMemory > 14000)){
+                jwsjson = Storage.getValue("02wsjson") as Dictionary;
             }
             else{
-                jwsjson = Application.getApp().getProperty("02wsjson") as Toybox.Lang.String;
+                jwsjson = Application.Properties.getValue("02wsjson") as Dictionary;
             }
         // System.println(jwsjson);
-        var mSigWeather = getSigWeatherDisplayString(jwsjson["sigRunWalkweather"], mlang);
-        sigweatherText.setText(convertTextToMultiline(dc, mSigWeather));
+        var sigRunWalk = jwsjson["sigRunWalkweather"] as Dictionary;
+        var mSigWeather = getSigWeatherDisplayString(sigRunWalk, mlang);
+        sigweatherText.setText(mSigWeather);
         
         if (mlang == 0){
-            changeBitmap();
+            changeBitmap(dc);
         }
-        dc.clear();
-        dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_WHITE);             
-        dc.drawText(dc.getWidth() / 2, 50, Graphics.FONT_TINY, convertTextToMultiline(dc, mSigWeather), Graphics.TEXT_JUSTIFY_CENTER);
-        
         View.onUpdate( dc );
          
     }
@@ -118,18 +117,18 @@ function convertTextToMultilineHelper(text, charPerLine) {
         }
     }
 }
-    function getSigWeatherDisplayString(array, lang as $.Toybox.Lang.Number) {
+     function getSigWeatherDisplayString(array as Dictionary, lang as Number) {
             var displayString = "";
-            for(var index = 2; index < array.size(); index++) {
-                    displayString += getSigWeatherDictionaryDisplayString(array[index], lang);
+            for(var index = 1; index < array.size(); index++) {
+                    displayString += getSigWeatherDictionaryDisplayString(array[index] as Dictionary, lang);
                     displayString += "   ";
             }
             System.println(displayString);
             return displayString;
-        }
+    }
              //Get a display string for a dictionary
-    function getSigWeatherDictionaryDisplayString(dictionary, lang) {
-        var displayString = Lang.format("$1$ - $2$", [dictionary["sigtitle"+lang], dictionary["sigext"+lang]]);
+    function getSigWeatherDictionaryDisplayString(dictionary as Dictionary, lang) {
+        var displayString = Lang.format("$1$ \n $2$", [dictionary["sigtitle"+lang], dictionary["sigext"+lang]]);
         if (displayString.length() > 20){
             displayString = Lang.format("$1$ \n $2$", [dictionary["sigtitle"+lang], dictionary["sigext"+lang]]);
         }
@@ -168,10 +167,14 @@ function convertTextToMultilineHelper(text, charPerLine) {
         return displayString;
     }
 
-    function changeBitmap() {
-        var bitmap = findDrawableById("logoc") as Toybox.WatchUi.Bitmap;
-        bitmap.setBitmap(Rez.Drawables.logoc_eng);
-         WatchUi.requestUpdate();
+    function changeBitmap(dc as Dc) {
+        var myStats = System.getSystemStats();
+        if (myStats.freeMemory < 20000)
+        { return; }
+        var bitmap = View.findDrawableById("logoDetailsLayout") as Bitmap;
+        var image = Application.loadResource( Rez.Drawables.logoc_eng ) as BitmapResource;
+        bitmap.setBitmap(image);
+         View.onUpdate(dc);
     }
 
    

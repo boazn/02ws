@@ -2,1162 +2,1820 @@
 import Toybox.Graphics;
 [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 2; @symbol_importdef<0> = [Toybox,2,7,13]; @symbol_importdef<1> = [WatchUi,2,14,21]; ]
 import Toybox.WatchUi;
-[ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 4; glance = true; @symbol_classdef = [JwsGlanceView,4,6,19]; @symbol_extends<0> = [WatchUi,4,28,35]; @symbol_extends<1> = [GlanceView,4,36,46]; ]
+[ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 3; @symbol_importdef<0> = [Toybox,3,7,13]; @symbol_importdef<1> = [Lang,3,14,18]; ]
+import Toybox.Lang;
+[ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 5; glance = true; @symbol_classdef = [JwsGlanceView,5,6,19]; @symbol_extends<0> = [WatchUi,5,28,35]; @symbol_extends<1> = [GlanceView,5,36,46]; ]
 class JwsGlanceView extends WatchUi.GlanceView {
-    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 4; ]
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 5; ]
     <init> {
     }
-    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 4; ]
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 5; ]
     static
     <init> {
     }
-    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 5; @position = 17; @symbol_vardef = [mMessage,5,17,25]; ]
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 6; @position = 17; @symbol_vardef = [mMessage,6,17,25]; ]
     protected
     var mMessage = "02WS\n";
-    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 6; @position = 15; @symbol_vardef = [mDate,6,15,20]; ]
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 7; @position = 15; @symbol_vardef = [mDate,7,15,20]; ]
     protected
     var mDate = "";
-    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 7; @position = 15; @symbol_vardef = [mSigWeather,7,15,26]; ]
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 8; @position = 15; @symbol_vardef = [mSigWeather,8,15,26]; ]
     protected
     var mSigWeather = "";
-    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 8; @position = 15; @symbol_vardef = [mTempTitle,8,15,25]; ]
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 9; @position = 15; @symbol_vardef = [mTempTitle,9,15,25]; ]
     protected
     var mTempTitle = "";
-    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 9; @position = 15; @symbol_vardef = [mWindHumTitle,9,15,28]; ]
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 10; @position = 15; @symbol_vardef = [mTemp,10,15,20]; ]
+    protected
+    var mTemp = null;
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 11; @position = 15; @symbol_vardef = [mWindHumTitle,11,15,28]; ]
     protected
     var mWindHumTitle = "";
-    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 10; @position = 15; @symbol_vardef = [mRain,10,15,20]; ]
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 12; @position = 15; @symbol_vardef = [mRain,12,15,20]; ]
     protected
     var mRain = "";
-    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 11; @position = 15; @symbol_vardef = [mModel,11,15,21]; ]
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 13; @position = 15; @symbol_vardef = [mWind,13,15,20]; ]
+    protected
+    var mWind = "";
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 14; @position = 15; @symbol_vardef = [mHum,14,15,19]; ]
+    protected
+    var mHum = "";
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 15; @position = 15; @symbol_vardef = [mModel,15,15,21]; ]
     protected
     var mModel;
-    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 12; @position = 8; @symbol_vardef = [mLogo,12,8,13]; ]
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 16; @position = 8; @symbol_vardef = [mLogo,16,8,13]; ]
     var mLogo;
-    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 13; @position = 8; @symbol_vardef = [mlang,13,8,13]; ]
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 17; @position = 8; @symbol_vardef = [mlang,17,8,13]; ]
     var mlang;
-    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 14; @position = 8; @symbol_vardef = [mwriter,14,8,15]; ]
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 18; @position = 8; @symbol_vardef = [mwriter,18,8,15]; ]
     var mwriter;
-    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 15; @position = 15; @symbol_vardef = [jTextArea,15,15,24]; ]
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 19; @position = 15; @symbol_vardef = [jTextArea,19,15,24]; ]
     protected
     var jTextArea;
-    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 18; @symbol_functiondef = [initialize,18,13,23]; @symbol_param<0> = [lang,18,24,28]; ]
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 22; @symbol_functiondef = [initialize,22,14,24]; @symbol_param<0> = [lang,22,25,29]; ]
     function initialize(lang) as Void {
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_18_30_23_4_start:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 19 8 ]
-        symbol [ WatchUi %tmp.1 19 8 15 ];
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_22_31_27_4_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 23 8 ]
+        symbol [ WatchUi %tmp.1 23 8 15 ];
         %tmp.1 = getm $.Toybox.WatchUi;
-        symbol [ GlanceView %tmp.2 19 16 26 ];
+        symbol [ GlanceView %tmp.2 23 16 26 ];
         %tmp.2 = getv %tmp.1 :GlanceView;
-        symbol [ initialize %tmp.3 19 27 37 ];
+        symbol [ initialize %tmp.3 23 27 37 ];
         %tmp.3 = getv function %tmp.2 :initialize;
         invoke %tmp.2 %tmp.3();
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 20 8 ]
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 24 8 ]
         %tmp.4 = lgetv %lang;
-        symbol [ lang %tmp.4 20 16 20 ];
-        symbol [ mlang ? 20 8 13 ];
+        symbol [ lang %tmp.4 24 16 20 ];
+        symbol [ mlang ? 24 8 13 ];
         putv self :mlang %tmp.4;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_18_30_23_4_stop:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 25 8 ]
+        symbol [ System %tmp.6 25 8 14 ];
+        %tmp.6 = getv ? :System;
+        symbol [ println %tmp.7 25 15 22 ];
+        %tmp.7 = getv function %tmp.6 :println;
+        %tmp.8 = "GlanceView initialize:";
+        symbol [ mlang %tmp.10 25 50 55 ];
+        %tmp.10 = getv ? :mlang;
+        %tmp.11 = add %tmp.8 %tmp.10;
+        invoke %tmp.6 %tmp.7(%tmp.11);
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_22_31_27_4_stop:
     }
-    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 26; @symbol_functiondef = [onShow,26,13,19]; ]
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 29; @symbol_functiondef = [onLayout,29,13,21]; @symbol_param<0> = [dc,29,22,24]; @symbol_param<0>_type<0> = [Dc,29,28,30]; ]
+    function onLayout(dc as Dc) as Void {
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_29_40_31_4_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 30 8 ]
+        %tmp.1 = self;
+        symbol [ setLayout %tmp.2 30 8 17 ];
+        %tmp.2 = getv function %tmp.1 :setLayout;
+        symbol [ Rez %tmp.4 30 18 21 ];
+        %tmp.4 = getv ? :Rez;
+        symbol [ Layouts %tmp.5 30 22 29 ];
+        %tmp.5 = getv %tmp.4 :Layouts;
+        symbol [ GlanceLayout %tmp.6 30 30 42 ];
+        %tmp.6 = getv function %tmp.5 :GlanceLayout;
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 30 43 45 ];
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        invoke %tmp.1 %tmp.2(%tmp.8);
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_29_40_31_4_stop:
+    }
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 33; @symbol_functiondef = [onShow,33,13,19]; ]
     function onShow() {
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_26_22_29_4_start:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 27 9 ]
-        symbol [ System %tmp.2 27 9 15 ];
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_33_22_36_4_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 34 9 ]
+        symbol [ System %tmp.2 34 9 15 ];
         %tmp.2 = getv ? :System;
-        symbol [ println %tmp.3 27 16 23 ];
+        symbol [ println %tmp.3 34 16 23 ];
         %tmp.3 = getv function %tmp.2 :println;
         %tmp.4 = "GlanceView onShow:";
         invoke %tmp.2 %tmp.3(%tmp.4);
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_26_22_29_4_stop:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_33_22_36_4_stop:
     }
-    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 31; @symbol_functiondef = [onLoad,31,14,20]; ]
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 38; @symbol_functiondef = [onLoad,38,14,20]; ]
     function onLoad() {
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_31_23_33_4_start:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 32 10 ]
-        symbol [ System %tmp.2 32 10 16 ];
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_38_23_40_4_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 39 10 ]
+        symbol [ System %tmp.2 39 10 16 ];
         %tmp.2 = getv ? :System;
-        symbol [ println %tmp.3 32 17 24 ];
+        symbol [ println %tmp.3 39 17 24 ];
         %tmp.3 = getv function %tmp.2 :println;
         %tmp.4 = "GlanceView onLoad:";
         invoke %tmp.2 %tmp.3(%tmp.4);
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_31_23_33_4_stop:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_38_23_40_4_stop:
     }
-    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 36; @symbol_functiondef = [onUpdate,36,13,21]; @symbol_param<0> = [dc,36,22,24]; ]
-    function onUpdate(dc) {
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_36_26_65_4_start:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 38 9 ]
-        symbol [ System %tmp.2 38 9 15 ];
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 43; @symbol_functiondef = [onUpdate,43,13,21]; @symbol_param<0> = [dc,43,22,24]; @symbol_param<0>_type<0> = [Dc,43,28,30]; ]
+    function onUpdate(dc as Dc) {
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_43_32_82_4_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 45 9 ]
+        symbol [ System %tmp.2 45 9 15 ];
         %tmp.2 = getv ? :System;
-        symbol [ println %tmp.3 38 16 23 ];
+        symbol [ println %tmp.3 45 16 23 ];
         %tmp.3 = getv function %tmp.2 :println;
-        %tmp.4 = "GlanceView OnUpdate:";
-        symbol [ mDate %tmp.6 38 49 54 ];
+        %tmp.4 = "GlanceView onUpdate:";
+        symbol [ mDate %tmp.6 45 49 54 ];
         %tmp.6 = getv ? :mDate;
         %tmp.7 = add %tmp.4 %tmp.6;
         %tmp.8 = " ";
         %tmp.9 = add %tmp.7 %tmp.8;
-        symbol [ mTempTitle %tmp.11 38 63 73 ];
+        symbol [ mTempTitle %tmp.11 45 63 73 ];
         %tmp.11 = getv ? :mTempTitle;
         %tmp.12 = add %tmp.9 %tmp.11;
         %tmp.13 = " ";
         %tmp.14 = add %tmp.12 %tmp.13;
-        symbol [ mWindHumTitle %tmp.16 38 82 95 ];
+        symbol [ mWindHumTitle %tmp.16 45 82 95 ];
         %tmp.16 = getv ? :mWindHumTitle;
         %tmp.17 = add %tmp.14 %tmp.16;
         %tmp.18 = " ";
         %tmp.19 = add %tmp.17 %tmp.18;
-        symbol [ mSigWeather %tmp.21 38 104 115 ];
+        symbol [ mSigWeather %tmp.21 45 104 115 ];
         %tmp.21 = getv ? :mSigWeather;
         %tmp.22 = add %tmp.19 %tmp.21;
         invoke %tmp.2 %tmp.3(%tmp.22);
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 39 10 ]
-        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_36_26_65_4_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_36_26_65_4_stop" ]
-        %DateLabel.1 = local;
-        symbol [ DateLabel %DateLabel.1 39 14 23 ];
-        symbol [ View %tmp.24 39 26 30 ];
-        %tmp.24 = getv ? :View;
-        symbol [ findDrawableById %tmp.25 39 31 47 ];
-        %tmp.25 = getv function %tmp.24 :findDrawableById;
-        %tmp.26 = "DateLabel";
-        %tmp.27 = invoke %tmp.24 %tmp.25(%tmp.26);
-        lputv %DateLabel.1 %tmp.27;
-        symbol [ DateLabel %DateLabel.1 39 14 23 ];
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 40 8 ]
-        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_36_26_65_4_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_36_26_65_4_stop" ]
-        %TempLabel.2 = local;
-        symbol [ TempLabel %TempLabel.2 40 12 21 ];
-        symbol [ View %tmp.29 40 24 28 ];
-        %tmp.29 = getv ? :View;
-        symbol [ findDrawableById %tmp.30 40 29 45 ];
-        %tmp.30 = getv function %tmp.29 :findDrawableById;
-        %tmp.31 = "TempLabel";
-        %tmp.32 = invoke %tmp.29 %tmp.30(%tmp.31);
-        lputv %TempLabel.2 %tmp.32;
-        symbol [ TempLabel %TempLabel.2 40 12 21 ];
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 41 8 ]
-        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_36_26_65_4_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_36_26_65_4_stop" ]
-        %WindHumLabel.3 = local;
-        symbol [ WindHumLabel %WindHumLabel.3 41 12 24 ];
-        symbol [ View %tmp.34 41 27 31 ];
-        %tmp.34 = getv ? :View;
-        symbol [ findDrawableById %tmp.35 41 32 48 ];
-        %tmp.35 = getv function %tmp.34 :findDrawableById;
-        %tmp.36 = "WindHumLabel";
-        %tmp.37 = invoke %tmp.34 %tmp.35(%tmp.36);
-        lputv %WindHumLabel.3 %tmp.37;
-        symbol [ WindHumLabel %WindHumLabel.3 41 12 24 ];
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 42 8 ]
-        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_36_26_65_4_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_36_26_65_4_stop" ]
-        %sigweatherText.4 = local;
-        symbol [ sigweatherText %sigweatherText.4 42 12 26 ];
-        symbol [ View %tmp.39 42 29 33 ];
-        %tmp.39 = getv ? :View;
-        symbol [ findDrawableById %tmp.40 42 34 50 ];
-        %tmp.40 = getv function %tmp.39 :findDrawableById;
-        %tmp.41 = "sigweatherText";
-        %tmp.42 = invoke %tmp.39 %tmp.40(%tmp.41);
-        lputv %sigweatherText.4 %tmp.42;
-        symbol [ sigweatherText %sigweatherText.4 42 12 26 ];
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 43 8 ]
-        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_36_26_65_4_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_36_26_65_4_stop" ]
-        %RainText.5 = local;
-        symbol [ RainText %RainText.5 43 12 20 ];
-        symbol [ View %tmp.44 43 23 27 ];
-        %tmp.44 = getv ? :View;
-        symbol [ findDrawableById %tmp.45 43 28 44 ];
-        %tmp.45 = getv function %tmp.44 :findDrawableById;
-        %tmp.46 = "RainLabel";
-        %tmp.47 = invoke %tmp.44 %tmp.45(%tmp.46);
-        lputv %RainText.5 %tmp.47;
-        symbol [ RainText %RainText.5 43 12 20 ];
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 47 8 ]
+        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_43_32_82_4_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_43_32_82_4_stop" ]
+        %_message.1 = local;
+        symbol [ _message %_message.1 47 12 20 ];
+        symbol [ mTempTitle %tmp.24 47 23 33 ];
+        %tmp.24 = getv ? :mTempTitle;
+        %tmp.25 = "\n";
+        %tmp.26 = add %tmp.24 %tmp.25;
+        symbol [ mWindHumTitle %tmp.28 47 43 56 ];
+        %tmp.28 = getv ? :mWindHumTitle;
+        %tmp.29 = add %tmp.26 %tmp.28;
+        %tmp.30 = "\n";
+        %tmp.31 = add %tmp.29 %tmp.30;
+        symbol [ mRain %tmp.33 47 66 71 ];
+        %tmp.33 = getv ? :mRain;
+        %tmp.34 = add %tmp.31 %tmp.33;
+        lputv %_message.1 %tmp.34;
+        symbol [ _message %_message.1 47 12 20 ];
 [ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 49 8 ]
-        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_36_26_65_4_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_36_26_65_4_stop" ]
-        %_message.6 = local;
-        symbol [ _message %_message.6 49 12 20 ];
-        symbol [ mDate %tmp.49 49 23 28 ];
-        %tmp.49 = getv ? :mDate;
-        %tmp.50 = "\n";
-        %tmp.51 = add %tmp.49 %tmp.50;
-        symbol [ mTempTitle %tmp.53 49 38 48 ];
-        %tmp.53 = getv ? :mTempTitle;
-        %tmp.54 = add %tmp.51 %tmp.53;
-        %tmp.55 = "\n";
-        %tmp.56 = add %tmp.54 %tmp.55;
-        symbol [ mWindHumTitle %tmp.58 49 58 71 ];
-        %tmp.58 = getv ? :mWindHumTitle;
-        %tmp.59 = add %tmp.56 %tmp.58;
-        lputv %_message.6 %tmp.59;
-        symbol [ _message %_message.6 49 12 20 ];
+        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_43_32_82_4_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_43_32_82_4_stop" ]
+        %tempLabel.2 = local;
+        symbol [ tempLabel %tempLabel.2 49 12 21 ];
+        symbol [ View %tmp.36 49 24 28 ];
+        %tmp.36 = getv ? :View;
+        symbol [ findDrawableById %tmp.37 49 29 45 ];
+        %tmp.37 = getv function %tmp.36 :findDrawableById;
+        %tmp.38 = "tempTextGlance";
+        %tmp.39 = invoke %tmp.36 %tmp.37(%tmp.38);
+        %tmp.40 = as %tmp.39 Text;
+        symbol [ Text %tmp.40 49 67 71 ];
+        lputv %tempLabel.2 %tmp.40;
+        symbol [ tempLabel %tempLabel.2 49 12 21 ];
 [ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 50 8 ]
-        %tmp.60 = lgetv %dc;
-        symbol [ dc %tmp.60 50 8 10 ];
-        symbol [ setColor %tmp.61 50 11 19 ];
-        %tmp.61 = getv function %tmp.60 :setColor;
-        symbol [ Graphics %tmp.62 50 20 28 ];
-        %tmp.62 = getm $.Toybox.Graphics;
-        symbol [ COLOR_WHITE %tmp.63 50 29 40 ];
-        %tmp.63 = getv %tmp.62 :COLOR_WHITE;
-        symbol [ Graphics %tmp.64 50 42 50 ];
-        %tmp.64 = getm $.Toybox.Graphics;
-        symbol [ COLOR_BLACK %tmp.65 50 51 62 ];
-        %tmp.65 = getv %tmp.64 :COLOR_BLACK;
-        invoke %tmp.60 %tmp.61(%tmp.63, %tmp.65);
+        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_43_32_82_4_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_43_32_82_4_stop" ]
+        %humLabel.3 = local;
+        symbol [ humLabel %humLabel.3 50 12 20 ];
+        symbol [ View %tmp.42 50 23 27 ];
+        %tmp.42 = getv ? :View;
+        symbol [ findDrawableById %tmp.43 50 28 44 ];
+        %tmp.43 = getv function %tmp.42 :findDrawableById;
+        %tmp.44 = "humTextGlance";
+        %tmp.45 = invoke %tmp.42 %tmp.43(%tmp.44);
+        %tmp.46 = as %tmp.45 Text;
+        symbol [ Text %tmp.46 50 65 69 ];
+        lputv %humLabel.3 %tmp.46;
+        symbol [ humLabel %humLabel.3 50 12 20 ];
 [ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 51 8 ]
-        symbol [ System %tmp.67 51 8 14 ];
-        %tmp.67 = getv ? :System;
-        symbol [ println %tmp.68 51 15 22 ];
-        %tmp.68 = getv function %tmp.67 :println;
-        %tmp.69 = "GlanceView drawText:";
-        %tmp.70 = lgetv %_message.6;
-        symbol [ _message %tmp.70 51 48 56 ];
-        %tmp.71 = add %tmp.69 %tmp.70;
-        invoke %tmp.67 %tmp.68(%tmp.71);
+        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_43_32_82_4_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_43_32_82_4_stop" ]
+        %rainLabel.4 = local;
+        symbol [ rainLabel %rainLabel.4 51 12 21 ];
+        symbol [ View %tmp.48 51 24 28 ];
+        %tmp.48 = getv ? :View;
+        symbol [ findDrawableById %tmp.49 51 29 45 ];
+        %tmp.49 = getv function %tmp.48 :findDrawableById;
+        %tmp.50 = "rainTextGlance";
+        %tmp.51 = invoke %tmp.48 %tmp.49(%tmp.50);
+        %tmp.52 = as %tmp.51 Text;
+        symbol [ Text %tmp.52 51 67 71 ];
+        lputv %rainLabel.4 %tmp.52;
+        symbol [ rainLabel %rainLabel.4 51 12 21 ];
 [ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 52 8 ]
-        %tmp.72 = lgetv %dc;
-        symbol [ dc %tmp.72 52 8 10 ];
-        symbol [ drawText %tmp.73 52 11 19 ];
-        %tmp.73 = getv function %tmp.72 :drawText;
-        %tmp.74 = lgetv %dc;
-        symbol [ dc %tmp.74 52 20 22 ];
-        symbol [ getWidth %tmp.75 52 23 31 ];
-        %tmp.75 = getv function %tmp.74 :getWidth;
-        %tmp.76 = invoke %tmp.74 %tmp.75();
-        %tmp.77 = 2;
-        %tmp.78 = div %tmp.76 %tmp.77;
-        %tmp.79 = lgetv %dc;
-        symbol [ dc %tmp.79 52 39 41 ];
-        symbol [ getHeight %tmp.80 52 42 51 ];
-        %tmp.80 = getv function %tmp.79 :getHeight;
-        %tmp.81 = invoke %tmp.79 %tmp.80();
-        %tmp.82 = 2;
-        %tmp.83 = div %tmp.81 %tmp.82;
-        symbol [ Graphics %tmp.84 52 59 67 ];
-        %tmp.84 = getm $.Toybox.Graphics;
-        symbol [ FONT_TINY %tmp.85 52 68 77 ];
-        %tmp.85 = getv %tmp.84 :FONT_TINY;
-        %tmp.86 = lgetv %_message.6;
-        symbol [ _message %tmp.86 52 79 87 ];
-        symbol [ Graphics %tmp.87 52 89 97 ];
-        %tmp.87 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.88 52 98 117 ];
-        %tmp.88 = getv %tmp.87 :TEXT_JUSTIFY_CENTER;
-        invoke %tmp.72 %tmp.73(%tmp.78, %tmp.83, %tmp.85, %tmp.86, %tmp.88);
+        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_43_32_82_4_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_43_32_82_4_stop" ]
+        %windLabel.5 = local;
+        symbol [ windLabel %windLabel.5 52 12 21 ];
+        symbol [ View %tmp.54 52 24 28 ];
+        %tmp.54 = getv ? :View;
+        symbol [ findDrawableById %tmp.55 52 29 45 ];
+        %tmp.55 = getv function %tmp.54 :findDrawableById;
+        %tmp.56 = "windTextGlance";
+        %tmp.57 = invoke %tmp.54 %tmp.55(%tmp.56);
+        %tmp.58 = as %tmp.57 Text;
+        symbol [ Text %tmp.58 52 67 71 ];
+        lputv %windLabel.5 %tmp.58;
+        symbol [ windLabel %windLabel.5 52 12 21 ];
 [ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 53 8 ]
-        symbol [ View %tmp.90 53 8 12 ];
-        %tmp.90 = getv ? :View;
-        symbol [ onUpdate %tmp.91 53 13 21 ];
-        %tmp.91 = getv function %tmp.90 :onUpdate;
-        %tmp.92 = lgetv %dc;
-        symbol [ dc %tmp.92 53 23 25 ];
-        invoke %tmp.90 %tmp.91(%tmp.92);
+        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_43_32_82_4_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_43_32_82_4_stop" ]
+        %mainBackground.6 = local;
+        symbol [ mainBackground %mainBackground.6 53 12 26 ];
+        symbol [ View %tmp.60 53 29 33 ];
+        %tmp.60 = getv ? :View;
+        symbol [ findDrawableById %tmp.61 53 34 50 ];
+        %tmp.61 = getv function %tmp.60 :findDrawableById;
+        %tmp.62 = "MainBackground";
+        %tmp.63 = invoke %tmp.60 %tmp.61(%tmp.62);
+        %tmp.64 = as %tmp.63 Drawable;
+        symbol [ Drawable %tmp.64 53 72 80 ];
+        lputv %mainBackground.6 %tmp.64;
+        symbol [ mainBackground %mainBackground.6 53 12 26 ];
 [ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 54 8 ]
-        symbol [ WatchUi %tmp.95 54 24 31 ];
-        %tmp.95 = getm $.Toybox.WatchUi;
-        symbol [ Text %tmp.96 54 32 36 ];
-        %tmp.96 = getv function ? %tmp.95 :Text;
-        %tmp.97 = newd 6;
-        %tmp.99 = const :text;
-        symbol [ text %tmp.99 54 39 43 const ];
-        %tmp.100 = lgetv %_message.6;
-        symbol [ _message %tmp.100 54 45 53 ];
-        %tmp.101 = dup %tmp.97;
-        %tmp.102 = aputv %tmp.101 %tmp.99 %tmp.100;
-        %tmp.104 = const :color;
-        symbol [ color %tmp.104 55 13 18 const ];
-        symbol [ Graphics %tmp.105 55 20 28 ];
-        %tmp.105 = getm $.Toybox.Graphics;
-        symbol [ COLOR_WHITE %tmp.106 55 29 40 ];
-        %tmp.106 = getv %tmp.105 :COLOR_WHITE;
-        %tmp.107 = dup %tmp.102;
-        %tmp.108 = aputv %tmp.107 %tmp.104 %tmp.106;
-        %tmp.110 = const :font;
-        symbol [ font %tmp.110 56 13 17 const ];
-        symbol [ Graphics %tmp.111 56 19 27 ];
-        %tmp.111 = getm $.Toybox.Graphics;
-        symbol [ FONT_TINY %tmp.112 56 28 37 ];
-        %tmp.112 = getv %tmp.111 :FONT_TINY;
-        %tmp.113 = dup %tmp.108;
-        %tmp.114 = aputv %tmp.113 %tmp.110 %tmp.112;
-        %tmp.116 = const :x;
-        symbol [ x %tmp.116 57 13 14 const ];
-        %tmp.117 = "center";
-        %tmp.118 = dup %tmp.114;
-        %tmp.119 = aputv %tmp.118 %tmp.116 %tmp.117;
-        %tmp.121 = const :locX;
-        symbol [ locX %tmp.121 58 13 17 const ];
-        symbol [ WatchUi %tmp.122 58 20 27 ];
-        %tmp.122 = getm $.Toybox.WatchUi;
-        symbol [ LAYOUT_HALIGN_CENTER %tmp.123 58 28 48 ];
-        %tmp.123 = getv %tmp.122 :LAYOUT_HALIGN_CENTER;
-        %tmp.124 = dup %tmp.119;
-        %tmp.125 = aputv %tmp.124 %tmp.121 %tmp.123;
-        %tmp.127 = const :locY;
-        symbol [ locY %tmp.127 59 13 17 const ];
-        symbol [ WatchUi %tmp.128 59 19 26 ];
-        %tmp.128 = getm $.Toybox.WatchUi;
-        symbol [ LAYOUT_HALIGN_CENTER %tmp.129 59 27 47 ];
-        %tmp.129 = getv %tmp.128 :LAYOUT_HALIGN_CENTER;
-        %tmp.130 = dup %tmp.125;
-        %tmp.131 = aputv %tmp.130 %tmp.127 %tmp.129;
-        %tmp.93 = newc %tmp.96 (%tmp.131);
-        symbol [ jTextArea ? 54 8 17 ];
-        putv self :jTextArea %tmp.93;
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 60 12 ]
-        symbol [ jTextArea %tmp.133 60 12 21 ];
-        %tmp.133 = getv ? :jTextArea;
-        symbol [ setJustification %tmp.134 60 22 38 ];
-        %tmp.134 = getv function %tmp.133 :setJustification;
-        symbol [ Graphics %tmp.135 60 39 47 ];
-        %tmp.135 = getm $.Toybox.Graphics;
-        symbol [ TEXT_JUSTIFY_CENTER %tmp.136 60 48 67 ];
-        %tmp.136 = getv %tmp.135 :TEXT_JUSTIFY_CENTER;
-        invoke %tmp.133 %tmp.134(%tmp.136);
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 61 8 ]
-        symbol [ jTextArea %tmp.138 61 8 17 ];
-        %tmp.138 = getv ? :jTextArea;
-        symbol [ draw %tmp.139 61 18 22 ];
-        %tmp.139 = getv function %tmp.138 :draw;
-        %tmp.140 = lgetv %dc;
-        symbol [ dc %tmp.140 61 23 25 ];
-        invoke %tmp.138 %tmp.139(%tmp.140);
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_36_26_65_4_stop:
+        %tmp.65 = lgetv %mainBackground.6;
+        symbol [ mainBackground %tmp.65 54 8 22 ];
+        %tmp.66 = lgetv %dc;
+        symbol [ dc %tmp.66 54 31 33 ];
+        symbol [ getWidth %tmp.67 54 34 42 ];
+        %tmp.67 = getv function %tmp.66 :getWidth;
+        %tmp.68 = invoke %tmp.66 %tmp.67();
+        symbol [ width ? 54 23 28 ];
+        putv %tmp.65 :width %tmp.68;
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 55 8 ]
+        %tmp.69 = lgetv %mainBackground.6;
+        symbol [ mainBackground %tmp.69 55 8 22 ];
+        %tmp.70 = lgetv %dc;
+        symbol [ dc %tmp.70 55 32 34 ];
+        symbol [ getHeight %tmp.71 55 35 44 ];
+        %tmp.71 = getv function %tmp.70 :getHeight;
+        %tmp.72 = invoke %tmp.70 %tmp.71();
+        symbol [ height ? 55 23 29 ];
+        putv %tmp.69 :height %tmp.72;
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 56 8 ]
+        %tmp.73 = lgetv %dc;
+        symbol [ dc %tmp.73 56 8 10 ];
+        symbol [ setColor %tmp.74 56 11 19 ];
+        %tmp.74 = getv function %tmp.73 :setColor;
+        %tmp.75 = self;
+        symbol [ getColor %tmp.76 56 20 28 ];
+        %tmp.76 = getv function %tmp.75 :getColor;
+        %tmp.77 = invoke %tmp.75 %tmp.76();
+        %tmp.78 = self;
+        symbol [ getBGColor %tmp.79 56 32 42 ];
+        %tmp.79 = getv function %tmp.78 :getBGColor;
+        %tmp.80 = invoke %tmp.78 %tmp.79();
+        invoke %tmp.73 %tmp.74(%tmp.77, %tmp.80);
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 58 8 ]
+        %tmp.81 = lgetv %dc;
+        symbol [ dc %tmp.81 58 8 10 ];
+        symbol [ drawText %tmp.82 58 11 19 ];
+        %tmp.82 = getv function %tmp.81 :drawText;
+        %tmp.83 = lgetv %dc;
+        symbol [ dc %tmp.83 59 12 14 ];
+        symbol [ getWidth %tmp.84 59 15 23 ];
+        %tmp.84 = getv function %tmp.83 :getWidth;
+        %tmp.85 = invoke %tmp.83 %tmp.84();
+        %tmp.86 = 2;
+        %tmp.87 = div %tmp.85 %tmp.86;
+        %tmp.88 = lgetv %dc;
+        symbol [ dc %tmp.88 60 12 14 ];
+        symbol [ getHeight %tmp.89 60 15 24 ];
+        %tmp.89 = getv function %tmp.88 :getHeight;
+        %tmp.90 = invoke %tmp.88 %tmp.89();
+        %tmp.91 = 2;
+        %tmp.92 = div %tmp.90 %tmp.91;
+        symbol [ Graphics %tmp.93 61 12 20 ];
+        %tmp.93 = getm $.Toybox.Graphics;
+        symbol [ FONT_LARGE %tmp.94 61 21 31 ];
+        %tmp.94 = getv %tmp.93 :FONT_LARGE;
+        symbol [ mTempTitle %tmp.96 62 12 22 ];
+        %tmp.96 = getv ? :mTempTitle;
+        symbol [ Graphics %tmp.97 63 12 20 ];
+        %tmp.97 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.98 63 21 40 ];
+        %tmp.98 = getv %tmp.97 :TEXT_JUSTIFY_CENTER;
+        symbol [ Graphics %tmp.99 63 43 51 ];
+        %tmp.99 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_VCENTER %tmp.100 63 52 72 ];
+        %tmp.100 = getv %tmp.99 :TEXT_JUSTIFY_VCENTER;
+        %tmp.101 = bitor %tmp.98 %tmp.100;
+        invoke %tmp.81 %tmp.82(%tmp.87, %tmp.92, %tmp.94, %tmp.96, %tmp.101);
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 66 8 ]
+        %tmp.102 = lgetv %dc;
+        symbol [ dc %tmp.102 66 8 10 ];
+        symbol [ fillRectangle %tmp.103 66 11 24 ];
+        %tmp.103 = getv function %tmp.102 :fillRectangle;
+        %tmp.104 = 0;
+        %tmp.105 = 0;
+        %tmp.106 = lgetv %dc;
+        symbol [ dc %tmp.106 66 29 31 ];
+        symbol [ getWidth %tmp.107 66 32 40 ];
+        %tmp.107 = getv function %tmp.106 :getWidth;
+        %tmp.108 = invoke %tmp.106 %tmp.107();
+        %tmp.109 = lgetv %dc;
+        symbol [ dc %tmp.109 66 43 45 ];
+        symbol [ getHeight %tmp.110 66 46 55 ];
+        %tmp.110 = getv function %tmp.109 :getHeight;
+        %tmp.111 = invoke %tmp.109 %tmp.110();
+        invoke %tmp.102 %tmp.103(%tmp.104, %tmp.105, %tmp.108, %tmp.111);
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 67 8 ]
+        %tmp.112 = lgetv %dc;
+        symbol [ dc %tmp.112 67 8 10 ];
+        symbol [ clear %tmp.113 67 11 16 ];
+        %tmp.113 = getv function %tmp.112 :clear;
+        invoke %tmp.112 %tmp.113();
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 68 8 ]
+        %tmp.114 = lgetv %mainBackground.6;
+        symbol [ mainBackground %tmp.114 68 8 22 ];
+        symbol [ draw %tmp.115 68 23 27 ];
+        %tmp.115 = getv function %tmp.114 :draw;
+        %tmp.116 = lgetv %dc;
+        symbol [ dc %tmp.116 68 28 30 ];
+        invoke %tmp.114 %tmp.115(%tmp.116);
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 69 8 ]
+        %tmp.117 = lgetv %tempLabel.2;
+        symbol [ tempLabel %tmp.117 69 8 17 ];
+        symbol [ setColor %tmp.118 69 18 26 ];
+        %tmp.118 = getv function %tmp.117 :setColor;
+        %tmp.119 = self;
+        symbol [ getColor %tmp.120 69 27 35 ];
+        %tmp.120 = getv function %tmp.119 :getColor;
+        %tmp.121 = invoke %tmp.119 %tmp.120();
+        invoke %tmp.117 %tmp.118(%tmp.121);
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 70 8 ]
+        %tmp.122 = lgetv %tempLabel.2;
+        symbol [ tempLabel %tmp.122 70 8 17 ];
+        symbol [ setBackgroundColor %tmp.123 70 18 36 ];
+        %tmp.123 = getv function %tmp.122 :setBackgroundColor;
+        %tmp.124 = self;
+        symbol [ getBGColor %tmp.125 70 37 47 ];
+        %tmp.125 = getv function %tmp.124 :getBGColor;
+        %tmp.126 = invoke %tmp.124 %tmp.125();
+        invoke %tmp.122 %tmp.123(%tmp.126);
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 71 8 ]
+        %tmp.127 = lgetv %tempLabel.2;
+        symbol [ tempLabel %tmp.127 71 8 17 ];
+        symbol [ setText %tmp.128 71 18 25 ];
+        %tmp.128 = getv function %tmp.127 :setText;
+        symbol [ mTempTitle %tmp.130 71 26 36 ];
+        %tmp.130 = getv ? :mTempTitle;
+        invoke %tmp.127 %tmp.128(%tmp.130);
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 72 8 ]
+        %tmp.131 = lgetv %humLabel.3;
+        symbol [ humLabel %tmp.131 72 8 16 ];
+        symbol [ setText %tmp.132 72 17 24 ];
+        %tmp.132 = getv function %tmp.131 :setText;
+        symbol [ mHum %tmp.134 72 25 29 ];
+        %tmp.134 = getv ? :mHum;
+        invoke %tmp.131 %tmp.132(%tmp.134);
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 73 8 ]
+        %tmp.135 = lgetv %windLabel.5;
+        symbol [ windLabel %tmp.135 73 8 17 ];
+        symbol [ setText %tmp.136 73 18 25 ];
+        %tmp.136 = getv function %tmp.135 :setText;
+        symbol [ mWind %tmp.138 73 26 31 ];
+        %tmp.138 = getv ? :mWind;
+        invoke %tmp.135 %tmp.136(%tmp.138);
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 74 8 ]
+        %tmp.139 = lgetv %tempLabel.2;
+        symbol [ tempLabel %tmp.139 74 8 17 ];
+        symbol [ setText %tmp.140 74 18 25 ];
+        %tmp.140 = getv function %tmp.139 :setText;
+        symbol [ mTempTitle %tmp.142 74 26 36 ];
+        %tmp.142 = getv ? :mTempTitle;
+        invoke %tmp.139 %tmp.140(%tmp.142);
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 75 8 ]
+        %tmp.143 = lgetv %rainLabel.4;
+        symbol [ rainLabel %tmp.143 75 8 17 ];
+        symbol [ setText %tmp.144 75 18 25 ];
+        %tmp.144 = getv function %tmp.143 :setText;
+        symbol [ mRain %tmp.146 75 26 31 ];
+        %tmp.146 = getv ? :mRain;
+        invoke %tmp.143 %tmp.144(%tmp.146);
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 78 8 ]
+        symbol [ System %tmp.148 78 8 14 ];
+        %tmp.148 = getv ? :System;
+        symbol [ println %tmp.149 78 15 22 ];
+        %tmp.149 = getv function %tmp.148 :println;
+        %tmp.150 = "GlanceView drawText:";
+        %tmp.151 = lgetv %_message.1;
+        symbol [ _message %tmp.151 78 48 56 ];
+        %tmp.152 = add %tmp.150 %tmp.151;
+        invoke %tmp.148 %tmp.149(%tmp.152);
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 80 8 ]
+        symbol [ View %tmp.154 80 8 12 ];
+        %tmp.154 = getv ? :View;
+        symbol [ onUpdate %tmp.155 80 13 21 ];
+        %tmp.155 = getv function %tmp.154 :onUpdate;
+        %tmp.156 = lgetv %dc;
+        symbol [ dc %tmp.156 80 23 25 ];
+        invoke %tmp.154 %tmp.155(%tmp.156);
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_43_32_82_4_stop:
     }
-    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 69; @symbol_functiondef = [onHide,69,13,19]; ]
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 84; @symbol_functiondef = [getColor,84,14,22]; ]
+    function getColor() {
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_84_25_104_4_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 85 8 ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_85_8_86_40_if_stmt:
+        symbol [ mTemp %tmp.2 85 12 17 ];
+        %tmp.2 = getv ? :mTemp;
+        %tmp.3 = null;
+        %tmp.4 = eq %tmp.2 %tmp.3;
+        bf %tmp.4 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_85_8_86_40_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_85_8_86_40_if_true:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_86_11_86_40_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 86 12 ]
+        symbol [ Graphics %tmp.5 86 19 27 ];
+        %tmp.5 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.6 86 28 39 ];
+        %tmp.6 = getv %tmp.5 :COLOR_WHITE;
+        ret %tmp.6;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_86_11_86_40_stop:
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_85_8_86_40_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_85_8_86_40_if_end:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 87 8 ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_87_8_88_41_if_stmt:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_87_12_87_35_begin:
+        symbol [ mTemp %tmp.8 87 12 17 ];
+        %tmp.8 = getv ? :mTemp;
+        %tmp.9 = 0;
+        %tmp.10 = gte %tmp.8 %tmp.9;
+        bf %tmp.10 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_87_8_88_41_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_87_27_87_35_true:
+        symbol [ mTemp %tmp.12 87 27 32 ];
+        %tmp.12 = getv ? :mTemp;
+        %tmp.13 = 5;
+        %tmp.14 = lt %tmp.12 %tmp.13;
+        push %tmp.14;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_87_27_87_35_end:
+        %tmp.15 = phi [%tmp.10 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_87_12_87_35_begin] [%tmp.14 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_87_27_87_35_true] [%tmp.15 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_87_27_87_35_end];
+        bf %tmp.15 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_87_8_88_41_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_87_8_88_41_if_true:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_88_12_88_41_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 88 13 ]
+        symbol [ Graphics %tmp.16 88 20 28 ];
+        %tmp.16 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.17 88 29 40 ];
+        %tmp.17 = getv %tmp.16 :COLOR_WHITE;
+        ret %tmp.17;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_88_12_88_41_stop:
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_87_8_88_41_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_87_8_88_41_if_end:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 89 9 ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_89_9_90_41_if_stmt:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_89_13_89_36_begin:
+        symbol [ mTemp %tmp.19 89 13 18 ];
+        %tmp.19 = getv ? :mTemp;
+        %tmp.20 = 5;
+        %tmp.21 = gte %tmp.19 %tmp.20;
+        bf %tmp.21 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_89_9_90_41_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_89_28_89_36_true:
+        symbol [ mTemp %tmp.23 89 28 33 ];
+        %tmp.23 = getv ? :mTemp;
+        %tmp.24 = 10;
+        %tmp.25 = lt %tmp.23 %tmp.24;
+        push %tmp.25;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_89_28_89_36_end:
+        %tmp.26 = phi [%tmp.21 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_89_13_89_36_begin] [%tmp.25 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_89_28_89_36_true] [%tmp.26 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_89_28_89_36_end];
+        bf %tmp.26 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_89_9_90_41_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_89_9_90_41_if_true:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_90_12_90_41_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 90 13 ]
+        symbol [ Graphics %tmp.27 90 20 28 ];
+        %tmp.27 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.28 90 29 40 ];
+        %tmp.28 = getv %tmp.27 :COLOR_WHITE;
+        ret %tmp.28;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_90_12_90_41_stop:
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_89_9_90_41_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_89_9_90_41_if_end:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 91 9 ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_91_9_92_41_if_stmt:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_91_13_91_37_begin:
+        symbol [ mTemp %tmp.30 91 13 18 ];
+        %tmp.30 = getv ? :mTemp;
+        %tmp.31 = 10;
+        %tmp.32 = gte %tmp.30 %tmp.31;
+        bf %tmp.32 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_91_9_92_41_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_91_29_91_37_true:
+        symbol [ mTemp %tmp.34 91 29 34 ];
+        %tmp.34 = getv ? :mTemp;
+        %tmp.35 = 15;
+        %tmp.36 = lt %tmp.34 %tmp.35;
+        push %tmp.36;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_91_29_91_37_end:
+        %tmp.37 = phi [%tmp.32 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_91_13_91_37_begin] [%tmp.36 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_91_29_91_37_true] [%tmp.37 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_91_29_91_37_end];
+        bf %tmp.37 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_91_9_92_41_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_91_9_92_41_if_true:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_92_12_92_41_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 92 13 ]
+        symbol [ Graphics %tmp.38 92 20 28 ];
+        %tmp.38 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.39 92 29 40 ];
+        %tmp.39 = getv %tmp.38 :COLOR_WHITE;
+        ret %tmp.39;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_92_12_92_41_stop:
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_91_9_92_41_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_91_9_92_41_if_end:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 93 9 ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_93_9_94_41_if_stmt:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_93_13_93_37_begin:
+        symbol [ mTemp %tmp.41 93 13 18 ];
+        %tmp.41 = getv ? :mTemp;
+        %tmp.42 = 15;
+        %tmp.43 = gte %tmp.41 %tmp.42;
+        bf %tmp.43 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_93_9_94_41_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_93_29_93_37_true:
+        symbol [ mTemp %tmp.45 93 29 34 ];
+        %tmp.45 = getv ? :mTemp;
+        %tmp.46 = 20;
+        %tmp.47 = lt %tmp.45 %tmp.46;
+        push %tmp.47;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_93_29_93_37_end:
+        %tmp.48 = phi [%tmp.43 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_93_13_93_37_begin] [%tmp.47 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_93_29_93_37_true] [%tmp.48 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_93_29_93_37_end];
+        bf %tmp.48 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_93_9_94_41_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_93_9_94_41_if_true:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_94_12_94_41_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 94 13 ]
+        symbol [ Graphics %tmp.49 94 20 28 ];
+        %tmp.49 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.50 94 29 40 ];
+        %tmp.50 = getv %tmp.49 :COLOR_WHITE;
+        ret %tmp.50;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_94_12_94_41_stop:
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_93_9_94_41_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_93_9_94_41_if_end:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 95 9 ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_95_9_96_41_if_stmt:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_95_13_95_37_begin:
+        symbol [ mTemp %tmp.52 95 13 18 ];
+        %tmp.52 = getv ? :mTemp;
+        %tmp.53 = 20;
+        %tmp.54 = gte %tmp.52 %tmp.53;
+        bf %tmp.54 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_95_9_96_41_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_95_29_95_37_true:
+        symbol [ mTemp %tmp.56 95 29 34 ];
+        %tmp.56 = getv ? :mTemp;
+        %tmp.57 = 25;
+        %tmp.58 = lt %tmp.56 %tmp.57;
+        push %tmp.58;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_95_29_95_37_end:
+        %tmp.59 = phi [%tmp.54 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_95_13_95_37_begin] [%tmp.58 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_95_29_95_37_true] [%tmp.59 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_95_29_95_37_end];
+        bf %tmp.59 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_95_9_96_41_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_95_9_96_41_if_true:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_96_12_96_41_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 96 13 ]
+        symbol [ Graphics %tmp.60 96 20 28 ];
+        %tmp.60 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.61 96 29 40 ];
+        %tmp.61 = getv %tmp.60 :COLOR_BLACK;
+        ret %tmp.61;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_96_12_96_41_stop:
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_95_9_96_41_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_95_9_96_41_if_end:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 97 9 ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_97_9_98_41_if_stmt:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_97_13_97_37_begin:
+        symbol [ mTemp %tmp.63 97 13 18 ];
+        %tmp.63 = getv ? :mTemp;
+        %tmp.64 = 25;
+        %tmp.65 = gte %tmp.63 %tmp.64;
+        bf %tmp.65 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_97_9_98_41_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_97_29_97_37_true:
+        symbol [ mTemp %tmp.67 97 29 34 ];
+        %tmp.67 = getv ? :mTemp;
+        %tmp.68 = 30;
+        %tmp.69 = lt %tmp.67 %tmp.68;
+        push %tmp.69;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_97_29_97_37_end:
+        %tmp.70 = phi [%tmp.65 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_97_13_97_37_begin] [%tmp.69 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_97_29_97_37_true] [%tmp.70 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_97_29_97_37_end];
+        bf %tmp.70 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_97_9_98_41_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_97_9_98_41_if_true:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_98_12_98_41_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 98 13 ]
+        symbol [ Graphics %tmp.71 98 20 28 ];
+        %tmp.71 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.72 98 29 40 ];
+        %tmp.72 = getv %tmp.71 :COLOR_BLACK;
+        ret %tmp.72;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_98_12_98_41_stop:
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_97_9_98_41_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_97_9_98_41_if_end:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 99 9 ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_99_9_100_41_if_stmt:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_99_13_99_37_begin:
+        symbol [ mTemp %tmp.74 99 13 18 ];
+        %tmp.74 = getv ? :mTemp;
+        %tmp.75 = 30;
+        %tmp.76 = gte %tmp.74 %tmp.75;
+        bf %tmp.76 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_99_9_100_41_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_99_29_99_37_true:
+        symbol [ mTemp %tmp.78 99 29 34 ];
+        %tmp.78 = getv ? :mTemp;
+        %tmp.79 = 35;
+        %tmp.80 = lt %tmp.78 %tmp.79;
+        push %tmp.80;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_99_29_99_37_end:
+        %tmp.81 = phi [%tmp.76 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_99_13_99_37_begin] [%tmp.80 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_99_29_99_37_true] [%tmp.81 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_99_29_99_37_end];
+        bf %tmp.81 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_99_9_100_41_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_99_9_100_41_if_true:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_100_12_100_41_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 100 13 ]
+        symbol [ Graphics %tmp.82 100 20 28 ];
+        %tmp.82 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.83 100 29 40 ];
+        %tmp.83 = getv %tmp.82 :COLOR_BLACK;
+        ret %tmp.83;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_100_12_100_41_stop:
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_99_9_100_41_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_99_9_100_41_if_end:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 101 9 ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_101_9_102_41_if_stmt:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_101_13_101_37_begin:
+        symbol [ mTemp %tmp.85 101 13 18 ];
+        %tmp.85 = getv ? :mTemp;
+        %tmp.86 = 35;
+        %tmp.87 = gte %tmp.85 %tmp.86;
+        bf %tmp.87 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_101_9_102_41_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_101_29_101_37_true:
+        symbol [ mTemp %tmp.89 101 29 34 ];
+        %tmp.89 = getv ? :mTemp;
+        %tmp.90 = 50;
+        %tmp.91 = lt %tmp.89 %tmp.90;
+        push %tmp.91;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_101_29_101_37_end:
+        %tmp.92 = phi [%tmp.87 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_101_13_101_37_begin] [%tmp.91 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_101_29_101_37_true] [%tmp.92 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_101_29_101_37_end];
+        bf %tmp.92 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_101_9_102_41_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_101_9_102_41_if_true:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_102_12_102_41_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 102 13 ]
+        symbol [ Graphics %tmp.93 102 20 28 ];
+        %tmp.93 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.94 102 29 40 ];
+        %tmp.94 = getv %tmp.93 :COLOR_WHITE;
+        ret %tmp.94;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_102_12_102_41_stop:
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_101_9_102_41_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_101_9_102_41_if_end:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 103 9 ]
+        symbol [ Graphics %tmp.95 103 16 24 ];
+        %tmp.95 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.96 103 25 36 ];
+        %tmp.96 = getv %tmp.95 :COLOR_WHITE;
+        ret %tmp.96;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_84_25_104_4_stop:
+    }
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 106; @symbol_functiondef = [getBGColor,106,13,23]; ]
+    function getBGColor() {
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_106_26_126_4_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 107 8 ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_107_8_108_40_if_stmt:
+        symbol [ mTemp %tmp.2 107 12 17 ];
+        %tmp.2 = getv ? :mTemp;
+        %tmp.3 = null;
+        %tmp.4 = eq %tmp.2 %tmp.3;
+        bf %tmp.4 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_107_8_108_40_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_107_8_108_40_if_true:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_108_11_108_40_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 108 12 ]
+        symbol [ Graphics %tmp.5 108 19 27 ];
+        %tmp.5 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.6 108 28 39 ];
+        %tmp.6 = getv %tmp.5 :COLOR_BLACK;
+        ret %tmp.6;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_108_11_108_40_stop:
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_107_8_108_40_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_107_8_108_40_if_end:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 109 8 ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_109_8_110_42_if_stmt:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_109_12_109_35_begin:
+        symbol [ mTemp %tmp.8 109 12 17 ];
+        %tmp.8 = getv ? :mTemp;
+        %tmp.9 = 0;
+        %tmp.10 = gte %tmp.8 %tmp.9;
+        bf %tmp.10 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_109_8_110_42_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_109_27_109_35_true:
+        symbol [ mTemp %tmp.12 109 27 32 ];
+        %tmp.12 = getv ? :mTemp;
+        %tmp.13 = 5;
+        %tmp.14 = lt %tmp.12 %tmp.13;
+        push %tmp.14;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_109_27_109_35_end:
+        %tmp.15 = phi [%tmp.10 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_109_12_109_35_begin] [%tmp.14 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_109_27_109_35_true] [%tmp.15 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_109_27_109_35_end];
+        bf %tmp.15 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_109_8_110_42_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_109_8_110_42_if_true:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_110_12_110_42_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 110 13 ]
+        symbol [ Graphics %tmp.16 110 20 28 ];
+        %tmp.16 = getm $.Toybox.Graphics;
+        symbol [ COLOR_PURPLE %tmp.17 110 29 41 ];
+        %tmp.17 = getv %tmp.16 :COLOR_PURPLE;
+        ret %tmp.17;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_110_12_110_42_stop:
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_109_8_110_42_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_109_8_110_42_if_end:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 111 9 ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_111_9_112_43_if_stmt:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_111_13_111_36_begin:
+        symbol [ mTemp %tmp.19 111 13 18 ];
+        %tmp.19 = getv ? :mTemp;
+        %tmp.20 = 5;
+        %tmp.21 = gte %tmp.19 %tmp.20;
+        bf %tmp.21 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_111_9_112_43_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_111_28_111_36_true:
+        symbol [ mTemp %tmp.23 111 28 33 ];
+        %tmp.23 = getv ? :mTemp;
+        %tmp.24 = 10;
+        %tmp.25 = lt %tmp.23 %tmp.24;
+        push %tmp.25;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_111_28_111_36_end:
+        %tmp.26 = phi [%tmp.21 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_111_13_111_36_begin] [%tmp.25 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_111_28_111_36_true] [%tmp.26 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_111_28_111_36_end];
+        bf %tmp.26 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_111_9_112_43_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_111_9_112_43_if_true:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_112_12_112_43_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 112 13 ]
+        symbol [ Graphics %tmp.27 112 20 28 ];
+        %tmp.27 = getm $.Toybox.Graphics;
+        symbol [ COLOR_DK_BLUE %tmp.28 112 29 42 ];
+        %tmp.28 = getv %tmp.27 :COLOR_DK_BLUE;
+        ret %tmp.28;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_112_12_112_43_stop:
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_111_9_112_43_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_111_9_112_43_if_end:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 113 9 ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_113_9_114_44_if_stmt:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_113_13_113_37_begin:
+        symbol [ mTemp %tmp.30 113 13 18 ];
+        %tmp.30 = getv ? :mTemp;
+        %tmp.31 = 10;
+        %tmp.32 = gte %tmp.30 %tmp.31;
+        bf %tmp.32 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_113_9_114_44_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_113_29_113_37_true:
+        symbol [ mTemp %tmp.34 113 29 34 ];
+        %tmp.34 = getv ? :mTemp;
+        %tmp.35 = 15;
+        %tmp.36 = lt %tmp.34 %tmp.35;
+        push %tmp.36;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_113_29_113_37_end:
+        %tmp.37 = phi [%tmp.32 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_113_13_113_37_begin] [%tmp.36 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_113_29_113_37_true] [%tmp.37 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_113_29_113_37_end];
+        bf %tmp.37 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_113_9_114_44_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_113_9_114_44_if_true:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_114_12_114_44_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 114 13 ]
+        symbol [ Graphics %tmp.38 114 20 28 ];
+        %tmp.38 = getm $.Toybox.Graphics;
+        symbol [ COLOR_DK_GREEN %tmp.39 114 29 43 ];
+        %tmp.39 = getv %tmp.38 :COLOR_DK_GREEN;
+        ret %tmp.39;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_114_12_114_44_stop:
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_113_9_114_44_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_113_9_114_44_if_end:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 115 9 ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_115_9_116_41_if_stmt:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_115_13_115_37_begin:
+        symbol [ mTemp %tmp.41 115 13 18 ];
+        %tmp.41 = getv ? :mTemp;
+        %tmp.42 = 15;
+        %tmp.43 = gte %tmp.41 %tmp.42;
+        bf %tmp.43 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_115_9_116_41_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_115_29_115_37_true:
+        symbol [ mTemp %tmp.45 115 29 34 ];
+        %tmp.45 = getv ? :mTemp;
+        %tmp.46 = 20;
+        %tmp.47 = lt %tmp.45 %tmp.46;
+        push %tmp.47;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_115_29_115_37_end:
+        %tmp.48 = phi [%tmp.43 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_115_13_115_37_begin] [%tmp.47 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_115_29_115_37_true] [%tmp.48 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_115_29_115_37_end];
+        bf %tmp.48 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_115_9_116_41_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_115_9_116_41_if_true:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_116_12_116_41_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 116 13 ]
+        symbol [ Graphics %tmp.49 116 20 28 ];
+        %tmp.49 = getm $.Toybox.Graphics;
+        symbol [ COLOR_GREEN %tmp.50 116 29 40 ];
+        %tmp.50 = getv %tmp.49 :COLOR_GREEN;
+        ret %tmp.50;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_116_12_116_41_stop:
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_115_9_116_41_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_115_9_116_41_if_end:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 117 9 ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_117_9_118_42_if_stmt:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_117_13_117_37_begin:
+        symbol [ mTemp %tmp.52 117 13 18 ];
+        %tmp.52 = getv ? :mTemp;
+        %tmp.53 = 20;
+        %tmp.54 = gte %tmp.52 %tmp.53;
+        bf %tmp.54 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_117_9_118_42_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_117_29_117_37_true:
+        symbol [ mTemp %tmp.56 117 29 34 ];
+        %tmp.56 = getv ? :mTemp;
+        %tmp.57 = 25;
+        %tmp.58 = lt %tmp.56 %tmp.57;
+        push %tmp.58;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_117_29_117_37_end:
+        %tmp.59 = phi [%tmp.54 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_117_13_117_37_begin] [%tmp.58 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_117_29_117_37_true] [%tmp.59 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_117_29_117_37_end];
+        bf %tmp.59 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_117_9_118_42_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_117_9_118_42_if_true:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_118_12_118_42_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 118 13 ]
+        symbol [ Graphics %tmp.60 118 20 28 ];
+        %tmp.60 = getm $.Toybox.Graphics;
+        symbol [ COLOR_ORANGE %tmp.61 118 29 41 ];
+        %tmp.61 = getv %tmp.60 :COLOR_ORANGE;
+        ret %tmp.61;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_118_12_118_42_stop:
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_117_9_118_42_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_117_9_118_42_if_end:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 119 9 ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_119_9_120_40_if_stmt:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_119_13_119_37_begin:
+        symbol [ mTemp %tmp.63 119 13 18 ];
+        %tmp.63 = getv ? :mTemp;
+        %tmp.64 = 25;
+        %tmp.65 = gte %tmp.63 %tmp.64;
+        bf %tmp.65 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_119_9_120_40_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_119_29_119_37_true:
+        symbol [ mTemp %tmp.67 119 29 34 ];
+        %tmp.67 = getv ? :mTemp;
+        %tmp.68 = 30;
+        %tmp.69 = lt %tmp.67 %tmp.68;
+        push %tmp.69;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_119_29_119_37_end:
+        %tmp.70 = phi [%tmp.65 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_119_13_119_37_begin] [%tmp.69 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_119_29_119_37_true] [%tmp.70 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_119_29_119_37_end];
+        bf %tmp.70 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_119_9_120_40_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_119_9_120_40_if_true:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_120_12_120_40_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 120 13 ]
+        symbol [ Graphics %tmp.71 120 20 28 ];
+        %tmp.71 = getm $.Toybox.Graphics;
+        symbol [ COLOR_PINK %tmp.72 120 29 39 ];
+        %tmp.72 = getv %tmp.71 :COLOR_PINK;
+        ret %tmp.72;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_120_12_120_40_stop:
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_119_9_120_40_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_119_9_120_40_if_end:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 121 9 ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_121_9_122_39_if_stmt:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_121_13_121_37_begin:
+        symbol [ mTemp %tmp.74 121 13 18 ];
+        %tmp.74 = getv ? :mTemp;
+        %tmp.75 = 30;
+        %tmp.76 = gte %tmp.74 %tmp.75;
+        bf %tmp.76 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_121_9_122_39_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_121_29_121_37_true:
+        symbol [ mTemp %tmp.78 121 29 34 ];
+        %tmp.78 = getv ? :mTemp;
+        %tmp.79 = 35;
+        %tmp.80 = lt %tmp.78 %tmp.79;
+        push %tmp.80;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_121_29_121_37_end:
+        %tmp.81 = phi [%tmp.76 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_121_13_121_37_begin] [%tmp.80 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_121_29_121_37_true] [%tmp.81 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_121_29_121_37_end];
+        bf %tmp.81 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_121_9_122_39_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_121_9_122_39_if_true:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_122_12_122_39_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 122 13 ]
+        symbol [ Graphics %tmp.82 122 20 28 ];
+        %tmp.82 = getm $.Toybox.Graphics;
+        symbol [ COLOR_RED %tmp.83 122 29 38 ];
+        %tmp.83 = getv %tmp.82 :COLOR_RED;
+        ret %tmp.83;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_122_12_122_39_stop:
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_121_9_122_39_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_121_9_122_39_if_end:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 123 9 ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_123_9_124_42_if_stmt:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_123_13_123_37_begin:
+        symbol [ mTemp %tmp.85 123 13 18 ];
+        %tmp.85 = getv ? :mTemp;
+        %tmp.86 = 35;
+        %tmp.87 = gte %tmp.85 %tmp.86;
+        bf %tmp.87 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_123_9_124_42_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_123_29_123_37_true:
+        symbol [ mTemp %tmp.89 123 29 34 ];
+        %tmp.89 = getv ? :mTemp;
+        %tmp.90 = 50;
+        %tmp.91 = lt %tmp.89 %tmp.90;
+        push %tmp.91;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_123_29_123_37_end:
+        %tmp.92 = phi [%tmp.87 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_123_13_123_37_begin] [%tmp.91 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_123_29_123_37_true] [%tmp.92 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_123_29_123_37_end];
+        bf %tmp.92 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_123_9_124_42_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_123_9_124_42_if_true:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_124_12_124_42_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 124 13 ]
+        symbol [ Graphics %tmp.93 124 20 28 ];
+        %tmp.93 = getm $.Toybox.Graphics;
+        symbol [ COLOR_DK_RED %tmp.94 124 29 41 ];
+        %tmp.94 = getv %tmp.93 :COLOR_DK_RED;
+        ret %tmp.94;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_124_12_124_42_stop:
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_123_9_124_42_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_123_9_124_42_if_end:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 125 9 ]
+        symbol [ Graphics %tmp.95 125 16 24 ];
+        %tmp.95 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.96 125 25 36 ];
+        %tmp.96 = getv %tmp.95 :COLOR_BLACK;
+        ret %tmp.96;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_106_26_126_4_stop:
+    }
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 129; @symbol_functiondef = [onHide,129,13,19]; ]
     function onHide() {
     }
-    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 73; @symbol_functiondef = [onReceive,73,20,29]; @symbol_param<0> = [args,73,30,34]; ]
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 133; @symbol_functiondef = [onReceive,133,20,29]; @symbol_param<0> = [args,133,30,34]; @symbol_param<0>_type<0> = [Dictionary,133,38,48]; ]
     public
-    function onReceive(args) {
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_73_36_98_4_start:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 74 8 ]
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_74_8_95_8_if_stmt:
+    function onReceive(args as Dictionary) {
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_133_50_169_4_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 134 9 ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_134_9_166_8_if_stmt:
         %tmp.1 = lgetv %args;
-        symbol [ args %tmp.1 74 12 16 ];
-        symbol [ Dictionary %tmp.3 74 28 38 ];
+        symbol [ args %tmp.1 134 13 17 ];
+        symbol [ Dictionary %tmp.3 134 29 39 ];
         %tmp.3 = getv ? :Dictionary;
         %tmp.4 = isa %tmp.1 %tmp.3;
-        bf %tmp.4 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_74_8_95_8_if_false;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_74_8_95_8_if_true:
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_74_40_89_8_start:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 76 12 ]
-        %tmp.5 = self;
-        symbol [ getDisplayString %tmp.6 76 20 36 ];
-        %tmp.6 = getv function %tmp.5 :getDisplayString;
-        %tmp.7 = lgetv %args;
-        symbol [ args %tmp.7 76 37 41 ];
-        %tmp.8 = as %tmp.7 { (Dictionary) };
-        %tmp.9 = "current";
-        %tmp.10 = agetv %tmp.8 %tmp.9;
-        %tmp.11 = "daytime";
-        symbol [ mlang %tmp.13 76 65 70 ];
-        %tmp.13 = getv ? :mlang;
-        %tmp.14 = add %tmp.11 %tmp.13;
-        %tmp.15 = agetv %tmp.10 %tmp.14;
-        %tmp.16 = invoke %tmp.5 %tmp.6(%tmp.15);
-        %tmp.17 = "";
-        %tmp.18 = add %tmp.16 %tmp.17;
-        symbol [ mDate ? 76 12 17 ];
-        putv self :mDate %tmp.18;
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 77 12 ]
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_77_12_82_12_if_stmt:
-        %tmp.19 = lgetv %args;
-        symbol [ args %tmp.19 77 16 20 ];
-        %tmp.20 = as %tmp.19 { (Dictionary) };
-        %tmp.21 = "current";
-        %tmp.22 = agetv %tmp.20 %tmp.21;
-        %tmp.23 = "islight";
-        %tmp.24 = agetv %tmp.22 %tmp.23;
-        symbol [ equals %tmp.25 77 43 49 ];
-        %tmp.25 = getv function %tmp.24 :equals;
-        %tmp.26 = "1";
-        %tmp.27 = invoke %tmp.24 %tmp.25(%tmp.26);
-        bf %tmp.27 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_77_12_82_12_if_else_false;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_77_12_82_12_if_true:
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_77_55_79_12_start:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 78 16 ]
-        %tmp.28 = self;
-        symbol [ getDisplayString %tmp.29 78 29 45 ];
-        %tmp.29 = getv function %tmp.28 :getDisplayString;
-        %tmp.30 = lgetv %args;
-        symbol [ args %tmp.30 78 46 50 ];
-        %tmp.31 = as %tmp.30 { (Dictionary) };
-        %tmp.32 = "current";
-        %tmp.33 = agetv %tmp.31 %tmp.32;
-        %tmp.34 = "temp";
-        %tmp.35 = agetv %tmp.33 %tmp.34;
-        %tmp.36 = invoke %tmp.28 %tmp.29(%tmp.35);
-        symbol [ StringUtil %tmp.38 78 73 83 ];
-        %tmp.38 = getv ? :StringUtil;
-        symbol [ utf8ArrayToString %tmp.39 78 84 101 ];
-        %tmp.39 = getv function %tmp.38 :utf8ArrayToString;
-        %tmp.40 = newa 2;
-        %tmp.41 = 0xC2;
-        %tmp.42 = dup %tmp.40;
-        %tmp.43 = aputv %tmp.42 0 %tmp.41;
-        %tmp.44 = 0xB0;
-        %tmp.45 = dup %tmp.43;
-        %tmp.46 = aputv %tmp.45 1 %tmp.44;
-        %tmp.47 = invoke %tmp.38 %tmp.39(%tmp.46);
-        %tmp.48 = add %tmp.36 %tmp.47;
-        %tmp.49 = " - ";
-        %tmp.50 = add %tmp.48 %tmp.49;
-        %tmp.51 = self;
-        symbol [ getDisplayString %tmp.52 78 125 141 ];
-        %tmp.52 = getv function %tmp.51 :getDisplayString;
-        %tmp.53 = lgetv %args;
-        symbol [ args %tmp.53 78 142 146 ];
-        %tmp.54 = as %tmp.53 { (Dictionary) };
-        %tmp.55 = "current";
-        %tmp.56 = agetv %tmp.54 %tmp.55;
-        %tmp.57 = "temp2";
-        %tmp.58 = agetv %tmp.56 %tmp.57;
-        symbol [ StringUtil %tmp.60 78 169 179 ];
-        %tmp.60 = getv ? :StringUtil;
-        symbol [ utf8ArrayToString %tmp.61 78 180 197 ];
-        %tmp.61 = getv function %tmp.60 :utf8ArrayToString;
-        %tmp.62 = newa 2;
-        %tmp.63 = 0xC2;
-        %tmp.64 = dup %tmp.62;
-        %tmp.65 = aputv %tmp.64 0 %tmp.63;
-        %tmp.66 = 0xB0;
-        %tmp.67 = dup %tmp.65;
-        %tmp.68 = aputv %tmp.67 1 %tmp.66;
-        %tmp.69 = invoke %tmp.60 %tmp.61(%tmp.68);
-        %tmp.70 = add %tmp.58 %tmp.69;
-        %tmp.71 = invoke %tmp.51 %tmp.52(%tmp.70);
-        %tmp.72 = add %tmp.50 %tmp.71;
-        symbol [ mTempTitle ? 78 16 26 ];
+        bf %tmp.4 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_134_9_166_8_if_false;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_134_9_166_8_if_true:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_134_41_160_8_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 135 12 ]
+        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_134_41_160_8_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_134_41_160_8_stop" ]
+        %mCurrent.1 = local;
+        symbol [ mCurrent %mCurrent.1 135 16 24 ];
+        %tmp.5 = lgetv %args;
+        symbol [ args %tmp.5 135 27 31 ];
+        %tmp.6 = as %tmp.5 { (Dictionary) };
+        symbol [ get %tmp.7 135 32 35 ];
+        %tmp.7 = getv function %tmp.6 :get;
+        %tmp.8 = "current";
+        %tmp.9 = invoke %tmp.6 %tmp.7(%tmp.8);
+        %tmp.10 = as %tmp.9 Dictionary;
+        symbol [ Dictionary %tmp.10 135 50 60 ];
+        lputv %mCurrent.1 %tmp.10;
+        symbol [ mCurrent %mCurrent.1 135 16 24 ];
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 136 12 ]
+        %tmp.11 = self;
+        symbol [ getDisplayString %tmp.12 136 20 36 ];
+        %tmp.12 = getv function %tmp.11 :getDisplayString;
+        %tmp.13 = lgetv %mCurrent.1;
+        symbol [ mCurrent %tmp.13 136 37 45 ];
+        symbol [ get %tmp.14 136 46 49 ];
+        %tmp.14 = getv function %tmp.13 :get;
+        %tmp.15 = "daytime";
+        symbol [ mlang %tmp.17 136 62 67 ];
+        %tmp.17 = getv ? :mlang;
+        %tmp.18 = add %tmp.15 %tmp.17;
+        %tmp.19 = invoke %tmp.13 %tmp.14(%tmp.18);
+        %tmp.20 = invoke %tmp.11 %tmp.12(%tmp.19);
+        %tmp.21 = "";
+        %tmp.22 = add %tmp.20 %tmp.21;
+        symbol [ mDate ? 136 12 17 ];
+        putv self :mDate %tmp.22;
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 137 12 ]
+        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_134_41_160_8_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_134_41_160_8_stop" ]
+        %mTempstr.2 = local;
+        symbol [ mTempstr %mTempstr.2 137 16 24 ];
+        %tmp.23 = lgetv %mCurrent.1;
+        symbol [ mCurrent %tmp.23 137 27 35 ];
+        symbol [ get %tmp.24 137 36 39 ];
+        %tmp.24 = getv function %tmp.23 :get;
+        %tmp.25 = "temp";
+        %tmp.26 = invoke %tmp.23 %tmp.24(%tmp.25);
+        %tmp.27 = as %tmp.26 String;
+        symbol [ String %tmp.27 137 51 57 ];
+        lputv %mTempstr.2 %tmp.27;
+        symbol [ mTempstr %mTempstr.2 137 16 24 ];
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 138 12 ]
+        %tmp.28 = lgetv %mTempstr.2;
+        symbol [ mTempstr %tmp.28 138 20 28 ];
+        symbol [ toFloat %tmp.29 138 29 36 ];
+        %tmp.29 = getv function %tmp.28 :toFloat;
+        %tmp.30 = invoke %tmp.28 %tmp.29();
+        symbol [ mTemp ? 138 12 17 ];
+        putv self :mTemp %tmp.30;
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 139 12 ]
+        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_134_41_160_8_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_134_41_160_8_stop" ]
+        %mHumstr.3 = local;
+        symbol [ mHumstr %mHumstr.3 139 16 23 ];
+        %tmp.31 = lgetv %mCurrent.1;
+        symbol [ mCurrent %tmp.31 139 26 34 ];
+        symbol [ get %tmp.32 139 35 38 ];
+        %tmp.32 = getv function %tmp.31 :get;
+        %tmp.33 = "hum";
+        %tmp.34 = invoke %tmp.31 %tmp.32(%tmp.33);
+        %tmp.35 = as %tmp.34 String;
+        symbol [ String %tmp.35 139 49 55 ];
+        lputv %mHumstr.3 %tmp.35;
+        symbol [ mHumstr %mHumstr.3 139 16 23 ];
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 140 12 ]
+        %tmp.36 = lgetv %mHumstr.3;
+        symbol [ mHumstr %tmp.36 140 19 26 ];
+        %tmp.37 = "%";
+        %tmp.38 = add %tmp.36 %tmp.37;
+        symbol [ mHum ? 140 12 16 ];
+        putv self :mHum %tmp.38;
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 141 12 ]
+        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_134_41_160_8_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_134_41_160_8_stop" ]
+        %mWindstr.4 = local;
+        symbol [ mWindstr %mWindstr.4 141 16 24 ];
+        %tmp.39 = lgetv %mCurrent.1;
+        symbol [ mCurrent %tmp.39 141 27 35 ];
+        symbol [ get %tmp.40 141 36 39 ];
+        %tmp.40 = getv function %tmp.39 :get;
+        %tmp.41 = "windspd10min";
+        %tmp.42 = invoke %tmp.39 %tmp.40(%tmp.41);
+        %tmp.43 = as %tmp.42 String;
+        symbol [ String %tmp.43 141 59 65 ];
+        lputv %mWindstr.4 %tmp.43;
+        symbol [ mWindstr %mWindstr.4 141 16 24 ];
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 142 12 ]
+        %tmp.44 = lgetv %mWindstr.4;
+        symbol [ mWindstr %tmp.44 142 20 28 ];
+        %tmp.45 = "KMH";
+        %tmp.46 = add %tmp.44 %tmp.45;
+        symbol [ mWind ? 142 12 17 ];
+        putv self :mWind %tmp.46;
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 143 12 ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_143_12_148_12_if_stmt:
+        %tmp.47 = lgetv %mCurrent.1;
+        symbol [ mCurrent %tmp.47 143 16 24 ];
+        symbol [ get %tmp.48 143 25 28 ];
+        %tmp.48 = getv function %tmp.47 :get;
+        %tmp.49 = "islight";
+        %tmp.50 = invoke %tmp.47 %tmp.48(%tmp.49);
+        symbol [ equals %tmp.51 143 40 46 ];
+        %tmp.51 = getv function %tmp.50 :equals;
+        %tmp.52 = "1";
+        %tmp.53 = invoke %tmp.50 %tmp.51(%tmp.52);
+        bf %tmp.53 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_143_12_148_12_if_else_false;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_143_12_148_12_if_true:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_143_52_145_12_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 144 16 ]
+        %tmp.54 = self;
+        symbol [ getDisplayString %tmp.55 144 29 45 ];
+        %tmp.55 = getv function %tmp.54 :getDisplayString;
+        %tmp.56 = lgetv %mCurrent.1;
+        symbol [ mCurrent %tmp.56 144 46 54 ];
+        symbol [ get %tmp.57 144 55 58 ];
+        %tmp.57 = getv function %tmp.56 :get;
+        %tmp.58 = "temp";
+        %tmp.59 = invoke %tmp.56 %tmp.57(%tmp.58);
+        %tmp.60 = invoke %tmp.54 %tmp.55(%tmp.59);
+        symbol [ StringUtil %tmp.62 144 70 80 ];
+        %tmp.62 = getv ? :StringUtil;
+        symbol [ utf8ArrayToString %tmp.63 144 81 98 ];
+        %tmp.63 = getv function %tmp.62 :utf8ArrayToString;
+        %tmp.64 = newa 2;
+        %tmp.65 = 0xC2;
+        %tmp.66 = dup %tmp.64;
+        %tmp.67 = aputv %tmp.66 0 %tmp.65;
+        %tmp.68 = 0xB0;
+        %tmp.69 = dup %tmp.67;
+        %tmp.70 = aputv %tmp.69 1 %tmp.68;
+        %tmp.71 = invoke %tmp.62 %tmp.63(%tmp.70);
+        %tmp.72 = add %tmp.60 %tmp.71;
+        symbol [ mTempTitle ? 144 16 26 ];
         putv self :mTempTitle %tmp.72;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_77_55_79_12_stop:
-        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_77_12_82_12_if_end;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_77_12_82_12_if_else_false:
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_80_16_82_12_start:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 81 16 ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_143_52_145_12_stop:
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_143_12_148_12_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_143_12_148_12_if_else_false:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_146_16_148_12_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 147 16 ]
         %tmp.73 = self;
-        symbol [ getDisplayString %tmp.74 81 29 45 ];
+        symbol [ getDisplayString %tmp.74 147 29 45 ];
         %tmp.74 = getv function %tmp.73 :getDisplayString;
-        %tmp.75 = lgetv %args;
-        symbol [ args %tmp.75 81 46 50 ];
-        %tmp.76 = as %tmp.75 { (Dictionary) };
-        %tmp.77 = "current";
-        %tmp.78 = agetv %tmp.76 %tmp.77;
-        %tmp.79 = "temp";
-        %tmp.80 = agetv %tmp.78 %tmp.79;
-        %tmp.81 = invoke %tmp.73 %tmp.74(%tmp.80);
-        symbol [ StringUtil %tmp.83 81 73 83 ];
-        %tmp.83 = getv ? :StringUtil;
-        symbol [ utf8ArrayToString %tmp.84 81 84 101 ];
-        %tmp.84 = getv function %tmp.83 :utf8ArrayToString;
-        %tmp.85 = newa 2;
-        %tmp.86 = 0xC2;
-        %tmp.87 = dup %tmp.85;
-        %tmp.88 = aputv %tmp.87 0 %tmp.86;
-        %tmp.89 = 0xB0;
-        %tmp.90 = dup %tmp.88;
-        %tmp.91 = aputv %tmp.90 1 %tmp.89;
-        %tmp.92 = invoke %tmp.83 %tmp.84(%tmp.91);
-        %tmp.93 = add %tmp.81 %tmp.92;
-        %tmp.94 = " - ";
-        %tmp.95 = add %tmp.93 %tmp.94;
-        %tmp.96 = self;
-        symbol [ getDisplayString %tmp.97 81 125 141 ];
-        %tmp.97 = getv function %tmp.96 :getDisplayString;
-        %tmp.98 = lgetv %args;
-        symbol [ args %tmp.98 81 142 146 ];
-        %tmp.99 = as %tmp.98 { (Dictionary) };
-        %tmp.100 = "current";
-        %tmp.101 = agetv %tmp.99 %tmp.100;
-        %tmp.102 = "temp3";
-        %tmp.103 = agetv %tmp.101 %tmp.102;
-        symbol [ StringUtil %tmp.105 81 169 179 ];
-        %tmp.105 = getv ? :StringUtil;
-        symbol [ utf8ArrayToString %tmp.106 81 180 197 ];
-        %tmp.106 = getv function %tmp.105 :utf8ArrayToString;
-        %tmp.107 = newa 2;
-        %tmp.108 = 0xC2;
-        %tmp.109 = dup %tmp.107;
-        %tmp.110 = aputv %tmp.109 0 %tmp.108;
-        %tmp.111 = 0xB0;
-        %tmp.112 = dup %tmp.110;
-        %tmp.113 = aputv %tmp.112 1 %tmp.111;
-        %tmp.114 = invoke %tmp.105 %tmp.106(%tmp.113);
-        %tmp.115 = add %tmp.103 %tmp.114;
-        %tmp.116 = invoke %tmp.96 %tmp.97(%tmp.115);
-        %tmp.117 = add %tmp.95 %tmp.116;
-        symbol [ mTempTitle ? 81 16 26 ];
-        putv self :mTempTitle %tmp.117;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_80_16_82_12_stop:
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_77_12_82_12_if_end:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 84 12 ]
-        %tmp.118 = self;
-        symbol [ getSigWeatherDisplayString %tmp.119 84 26 52 ];
-        %tmp.119 = getv function %tmp.118 :getSigWeatherDisplayString;
-        %tmp.120 = lgetv %args;
-        symbol [ args %tmp.120 84 53 57 ];
-        %tmp.121 = as %tmp.120 { (Dictionary) };
-        %tmp.122 = "sigRunWalkweather";
-        %tmp.123 = agetv %tmp.121 %tmp.122;
-        symbol [ mlang %tmp.125 84 80 85 ];
-        %tmp.125 = getv ? :mlang;
-        %tmp.126 = invoke %tmp.118 %tmp.119(%tmp.123, %tmp.125);
-        symbol [ mSigWeather ? 84 12 23 ];
-        putv self :mSigWeather %tmp.126;
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 85 12 ]
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_85_12_87_12_if_stmt:
-        %tmp.127 = lgetv %args;
-        symbol [ args %tmp.127 85 17 21 ];
-        %tmp.128 = as %tmp.127 { (Dictionary) };
-        %tmp.129 = "current";
-        %tmp.130 = agetv %tmp.128 %tmp.129;
-        %tmp.131 = "rainchance";
-        %tmp.132 = agetv %tmp.130 %tmp.131;
-        symbol [ equals %tmp.133 85 47 53 ];
-        %tmp.133 = getv function %tmp.132 :equals;
-        %tmp.134 = "0";
-        %tmp.135 = invoke %tmp.132 %tmp.133(%tmp.134);
-        %tmp.136 = not %tmp.135;
-        bf %tmp.136 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_85_12_87_12_if_end;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_85_12_87_12_if_true:
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_85_59_87_12_start:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 86 14 ]
-        %tmp.137 = lgetv %args;
-        symbol [ args %tmp.137 86 22 26 ];
-        %tmp.138 = as %tmp.137 { (Dictionary) };
-        %tmp.139 = "current";
-        %tmp.140 = agetv %tmp.138 %tmp.139;
-        %tmp.141 = "rainchance";
-        %tmp.142 = agetv %tmp.140 %tmp.141;
-        %tmp.143 = "% ";
-        %tmp.144 = add %tmp.142 %tmp.143;
-        %tmp.145 = self;
-        symbol [ loadResource %tmp.146 86 61 73 ];
-        %tmp.146 = getv function %tmp.145 :loadResource;
-        symbol [ Rez %tmp.148 86 74 77 ];
-        %tmp.148 = getv ? :Rez;
-        symbol [ Strings %tmp.149 86 78 85 ];
-        %tmp.149 = getv %tmp.148 :Strings;
-        symbol [ rain %tmp.150 86 86 90 ];
-        %tmp.150 = getv %tmp.149 :rain;
-        %tmp.151 = invoke %tmp.145 %tmp.146(%tmp.150);
-        %tmp.152 = add %tmp.144 %tmp.151;
-        symbol [ mRain ? 86 14 19 ];
-        putv self :mRain %tmp.152;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_85_59_87_12_stop:
-        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_85_12_87_12_if_end;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_85_12_87_12_if_end:
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_74_40_89_8_stop:
-        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_74_8_95_8_if_end;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_74_8_95_8_if_false:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 90 13 ]
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_90_13_95_8_if_stmt:
-        %tmp.153 = lgetv %args;
-        symbol [ args %tmp.153 90 17 21 ];
-        %tmp.154 = as %tmp.153 { (!Dictionary) };
-        symbol [ Array %tmp.156 90 33 38 ];
-        %tmp.156 = getv ? :Array;
-        %tmp.157 = isa %tmp.154 %tmp.156;
-        bf %tmp.157 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_90_13_95_8_if_false;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_90_13_95_8_if_true:
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_90_39_92_8_start:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 91 12 ]
-        %tmp.158 = "is Array";
-        symbol [ mMessage ? 91 12 20 ];
-        putv self :mMessage %tmp.158;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_90_39_92_8_stop:
-        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_90_13_95_8_if_end;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_90_13_95_8_if_false:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 93 13 ]
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_93_13_95_8_if_stmt:
-        %tmp.159 = lgetv %args;
-        symbol [ args %tmp.159 93 17 21 ];
-        %tmp.160 = as %tmp.159 { (!Array) && (!Dictionary) };
-        symbol [ Lang %tmp.162 93 33 37 ];
-        %tmp.162 = getv ? :Lang;
-        symbol [ String %tmp.163 93 38 44 ];
-        %tmp.163 = getv %tmp.162 :String;
-        %tmp.164 = isa %tmp.160 %tmp.163;
-        bf %tmp.164 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_93_13_95_8_if_end;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_93_13_95_8_if_true:
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_93_46_95_8_start:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 94 13 ]
-        %tmp.165 = lgetv %args;
-        symbol [ args %tmp.165 94 21 25 ];
-        %tmp.166 = as %tmp.165 { (!Array) && (Lang.String) && (!Dictionary) };
-        symbol [ mDate ? 94 13 18 ];
-        putv self :mDate %tmp.166;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_93_46_95_8_stop:
-        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_93_13_95_8_if_end;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_93_13_95_8_if_end:
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_90_13_95_8_if_end:
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_74_8_95_8_if_end:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 96 8 ]
-        symbol [ System %tmp.168 96 8 14 ];
-        %tmp.168 = getv ? :System;
-        symbol [ println %tmp.169 96 15 22 ];
-        %tmp.169 = getv function %tmp.168 :println;
-        %tmp.170 = "GlanceView onReceive:";
-        symbol [ mDate %tmp.172 96 48 53 ];
-        %tmp.172 = getv ? :mDate;
+        %tmp.75 = lgetv %mCurrent.1;
+        symbol [ mCurrent %tmp.75 147 46 54 ];
+        symbol [ get %tmp.76 147 55 58 ];
+        %tmp.76 = getv function %tmp.75 :get;
+        %tmp.77 = "temp";
+        %tmp.78 = invoke %tmp.75 %tmp.76(%tmp.77);
+        %tmp.79 = invoke %tmp.73 %tmp.74(%tmp.78);
+        symbol [ StringUtil %tmp.81 147 70 80 ];
+        %tmp.81 = getv ? :StringUtil;
+        symbol [ utf8ArrayToString %tmp.82 147 81 98 ];
+        %tmp.82 = getv function %tmp.81 :utf8ArrayToString;
+        %tmp.83 = newa 2;
+        %tmp.84 = 0xC2;
+        %tmp.85 = dup %tmp.83;
+        %tmp.86 = aputv %tmp.85 0 %tmp.84;
+        %tmp.87 = 0xB0;
+        %tmp.88 = dup %tmp.86;
+        %tmp.89 = aputv %tmp.88 1 %tmp.87;
+        %tmp.90 = invoke %tmp.81 %tmp.82(%tmp.89);
+        %tmp.91 = add %tmp.79 %tmp.90;
+        symbol [ mTempTitle ? 147 16 26 ];
+        putv self :mTempTitle %tmp.91;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_146_16_148_12_stop:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_143_12_148_12_if_end:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 149 12 ]
+        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_134_41_160_8_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_134_41_160_8_stop" ]
+        %sigRunWalk.5 = local;
+        symbol [ sigRunWalk %sigRunWalk.5 149 16 26 ];
+        %tmp.92 = lgetv %args;
+        symbol [ args %tmp.92 149 29 33 ];
+        %tmp.93 = as %tmp.92 { (Dictionary) };
+        %tmp.94 = "sigRunWalkweather";
+        %tmp.95 = agetv %tmp.93 %tmp.94;
+        %tmp.96 = as %tmp.95 Dictionary;
+        symbol [ Dictionary %tmp.96 149 58 68 ];
+        lputv %sigRunWalk.5 %tmp.96;
+        symbol [ sigRunWalk %sigRunWalk.5 149 16 26 ];
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 150 12 ]
+        %tmp.97 = self;
+        symbol [ getSigWeatherDisplayString %tmp.98 150 26 52 ];
+        %tmp.98 = getv function %tmp.97 :getSigWeatherDisplayString;
+        %tmp.99 = lgetv %sigRunWalk.5;
+        symbol [ sigRunWalk %tmp.99 150 53 63 ];
+        symbol [ mlang %tmp.101 150 65 70 ];
+        %tmp.101 = getv ? :mlang;
+        %tmp.102 = invoke %tmp.97 %tmp.98(%tmp.99, %tmp.101);
+        symbol [ mSigWeather ? 150 12 23 ];
+        putv self :mSigWeather %tmp.102;
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 151 12 ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_151_12_158_12_if_stmt:
+        %tmp.103 = lgetv %mCurrent.1;
+        symbol [ mCurrent %tmp.103 151 17 25 ];
+        symbol [ get %tmp.104 151 26 29 ];
+        %tmp.104 = getv function %tmp.103 :get;
+        %tmp.105 = "rainchance";
+        %tmp.106 = invoke %tmp.103 %tmp.104(%tmp.105);
+        symbol [ equals %tmp.107 151 44 50 ];
+        %tmp.107 = getv function %tmp.106 :equals;
+        %tmp.108 = "0";
+        %tmp.109 = invoke %tmp.106 %tmp.107(%tmp.108);
+        %tmp.110 = not %tmp.109;
+        bf %tmp.110 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_151_12_158_12_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_151_12_158_12_if_true:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_151_56_158_12_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 152 16 ]
+        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_151_56_158_12_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_151_56_158_12_stop" ]
+        %rainchance.6 = local;
+        symbol [ rainchance %rainchance.6 152 20 30 ];
+        %tmp.111 = newa 2;
+        %tmp.113 = const :rainchance0;
+        symbol [ rainchance0 %tmp.113 153 17 28 const ];
+        %tmp.114 = dup %tmp.111;
+        %tmp.115 = aputv %tmp.114 0 %tmp.113;
+        %tmp.117 = const :rainchance1;
+        symbol [ rainchance1 %tmp.117 154 17 28 const ];
+        %tmp.118 = dup %tmp.115;
+        %tmp.119 = aputv %tmp.118 1 %tmp.117;
+        lputv %rainchance.6 %tmp.119;
+        symbol [ rainchance %rainchance.6 152 20 30 ];
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 156 16 ]
+        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_151_56_158_12_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_151_56_158_12_stop" ]
+        %rainchance_str.7 = local;
+        symbol [ rainchance_str %rainchance_str.7 156 20 34 ];
+        %tmp.120 = self;
+        symbol [ loadResource %tmp.121 156 37 49 ];
+        %tmp.121 = getv function %tmp.120 :loadResource;
+        symbol [ Rez %tmp.123 156 50 53 ];
+        %tmp.123 = getv ? :Rez;
+        symbol [ Strings %tmp.124 156 54 61 ];
+        %tmp.124 = getv %tmp.123 :Strings;
+        %tmp.125 = lgetv %rainchance.6;
+        symbol [ rainchance %tmp.125 156 62 72 ];
+        symbol [ mlang %tmp.127 156 73 78 ];
+        %tmp.127 = getv ? :mlang;
+        %tmp.128 = agetv %tmp.125 %tmp.127;
+        %tmp.129 = agetv %tmp.124 %tmp.128;
+        %tmp.130 = invoke %tmp.120 %tmp.121(%tmp.129);
+        lputv %rainchance_str.7 %tmp.130;
+        symbol [ rainchance_str %rainchance_str.7 156 20 34 ];
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 157 14 ]
+        %tmp.131 = lgetv %mCurrent.1;
+        symbol [ mCurrent %tmp.131 157 22 30 ];
+        symbol [ get %tmp.132 157 31 34 ];
+        %tmp.132 = getv function %tmp.131 :get;
+        %tmp.133 = "rainchance";
+        %tmp.134 = invoke %tmp.131 %tmp.132(%tmp.133);
+        %tmp.135 = "% ";
+        %tmp.136 = add %tmp.134 %tmp.135;
+        %tmp.137 = lgetv %rainchance_str.7;
+        symbol [ rainchance_str %tmp.137 157 58 72 ];
+        %tmp.138 = add %tmp.136 %tmp.137;
+        symbol [ mRain ? 157 14 19 ];
+        putv self :mRain %tmp.138;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_151_56_158_12_stop:
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_151_12_158_12_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_151_12_158_12_if_end:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_134_41_160_8_stop:
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_134_9_166_8_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_134_9_166_8_if_false:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 161 13 ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_161_13_166_8_if_stmt:
+        %tmp.139 = lgetv %args;
+        symbol [ args %tmp.139 161 17 21 ];
+        %tmp.140 = as %tmp.139 { (!Dictionary) };
+        symbol [ Array %tmp.142 161 33 38 ];
+        %tmp.142 = getv ? :Array;
+        %tmp.143 = isa %tmp.140 %tmp.142;
+        bf %tmp.143 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_161_13_166_8_if_false;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_161_13_166_8_if_true:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_161_39_163_8_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 162 12 ]
+        %tmp.144 = "is Array";
+        symbol [ mMessage ? 162 12 20 ];
+        putv self :mMessage %tmp.144;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_161_39_163_8_stop:
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_161_13_166_8_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_161_13_166_8_if_false:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 164 13 ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_164_13_166_8_if_stmt:
+        %tmp.145 = lgetv %args;
+        symbol [ args %tmp.145 164 17 21 ];
+        %tmp.146 = as %tmp.145 { (!Array) && (!Dictionary) };
+        symbol [ Lang %tmp.147 164 33 37 ];
+        %tmp.147 = getm $.Toybox.Lang;
+        symbol [ String %tmp.148 164 38 44 ];
+        %tmp.148 = getv %tmp.147 :String;
+        %tmp.149 = isa %tmp.146 %tmp.148;
+        bf %tmp.149 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_164_13_166_8_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_164_13_166_8_if_true:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_164_46_166_8_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 165 13 ]
+        %tmp.150 = lgetv %args;
+        symbol [ args %tmp.150 165 26 30 ];
+        %tmp.151 = as %tmp.150 { (!Array) && (Lang.String) && (!Dictionary) };
+        symbol [ mTempTitle ? 165 13 23 ];
+        putv self :mTempTitle %tmp.151;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_164_46_166_8_stop:
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_164_13_166_8_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_164_13_166_8_if_end:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_161_13_166_8_if_end:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_134_9_166_8_if_end:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 167 8 ]
+        symbol [ System %tmp.153 167 8 14 ];
+        %tmp.153 = getv ? :System;
+        symbol [ println %tmp.154 167 15 22 ];
+        %tmp.154 = getv function %tmp.153 :println;
+        %tmp.155 = "GlanceView onReceive:";
+        symbol [ mDate %tmp.157 167 48 53 ];
+        %tmp.157 = getv ? :mDate;
+        %tmp.158 = add %tmp.155 %tmp.157;
+        %tmp.159 = " ";
+        %tmp.160 = add %tmp.158 %tmp.159;
+        symbol [ mTempTitle %tmp.162 167 62 72 ];
+        %tmp.162 = getv ? :mTempTitle;
+        %tmp.163 = add %tmp.160 %tmp.162;
+        %tmp.164 = " ";
+        %tmp.165 = add %tmp.163 %tmp.164;
+        symbol [ mWindHumTitle %tmp.167 167 81 94 ];
+        %tmp.167 = getv ? :mWindHumTitle;
+        %tmp.168 = add %tmp.165 %tmp.167;
+        %tmp.169 = " ";
+        %tmp.170 = add %tmp.168 %tmp.169;
+        symbol [ mSigWeather %tmp.172 167 103 114 ];
+        %tmp.172 = getv ? :mSigWeather;
         %tmp.173 = add %tmp.170 %tmp.172;
-        %tmp.174 = " ";
-        %tmp.175 = add %tmp.173 %tmp.174;
-        symbol [ mTempTitle %tmp.177 96 62 72 ];
-        %tmp.177 = getv ? :mTempTitle;
-        %tmp.178 = add %tmp.175 %tmp.177;
-        %tmp.179 = " ";
-        %tmp.180 = add %tmp.178 %tmp.179;
-        symbol [ mWindHumTitle %tmp.182 96 81 94 ];
-        %tmp.182 = getv ? :mWindHumTitle;
-        %tmp.183 = add %tmp.180 %tmp.182;
-        %tmp.184 = " ";
-        %tmp.185 = add %tmp.183 %tmp.184;
-        symbol [ mSigWeather %tmp.187 96 103 114 ];
-        %tmp.187 = getv ? :mSigWeather;
-        %tmp.188 = add %tmp.185 %tmp.187;
-        invoke %tmp.168 %tmp.169(%tmp.188);
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 97 8 ]
-        symbol [ WatchUi %tmp.189 97 8 15 ];
-        %tmp.189 = getm $.Toybox.WatchUi;
-        symbol [ requestUpdate %tmp.190 97 16 29 ];
-        %tmp.190 = getv function %tmp.189 :requestUpdate;
-        invoke %tmp.189 %tmp.190();
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_73_36_98_4_stop:
+        invoke %tmp.153 %tmp.154(%tmp.173);
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 168 8 ]
+        symbol [ WatchUi %tmp.174 168 8 15 ];
+        %tmp.174 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.175 168 16 29 ];
+        %tmp.175 = getv function %tmp.174 :requestUpdate;
+        invoke %tmp.174 %tmp.175();
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_133_50_169_4_stop:
     }
-    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 100; @symbol_functiondef = [getDisplayString,100,13,29]; @symbol_param<0> = [item,100,30,34]; ]
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 171; @symbol_functiondef = [getDisplayString,171,14,30]; @symbol_param<0> = [item,171,31,35]; ]
     function getDisplayString(item) {
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_100_36_112_4_start:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 101 8 ]
-        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_100_36_112_4_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_100_36_112_4_stop" ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_171_37_183_4_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 172 8 ]
+        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_171_37_183_4_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_171_37_183_4_stop" ]
         %displayString.1 = local;
-        symbol [ displayString %displayString.1 101 12 25 ];
+        symbol [ displayString %displayString.1 172 12 25 ];
         %tmp.1 = "";
         lputv %displayString.1 %tmp.1;
-        symbol [ displayString %displayString.1 101 12 25 ];
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 102 8 ]
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_102_8_109_8_if_stmt:
+        symbol [ displayString %displayString.1 172 12 25 ];
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 173 8 ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_173_8_180_8_if_stmt:
         %tmp.2 = lgetv %item;
-        symbol [ item %tmp.2 102 11 15 ];
-        symbol [ Toybox %tmp.4 102 27 33 ];
+        symbol [ item %tmp.2 173 11 15 ];
+        symbol [ Toybox %tmp.4 173 27 33 ];
         %tmp.4 = getv ? :Toybox;
-        symbol [ Lang %tmp.5 102 34 38 ];
+        symbol [ Lang %tmp.5 173 34 38 ];
         %tmp.5 = getv %tmp.4 :Lang;
-        symbol [ Array %tmp.6 102 39 44 ];
+        symbol [ Array %tmp.6 173 39 44 ];
         %tmp.6 = getv %tmp.5 :Array;
         %tmp.7 = isa %tmp.2 %tmp.6;
-        bf %tmp.7 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_102_8_109_8_if_false;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_102_8_109_8_if_true:
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_102_46_104_8_start:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 103 12 ]
+        bf %tmp.7 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_173_8_180_8_if_false;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_173_8_180_8_if_true:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_173_46_175_8_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 174 12 ]
         %tmp.8 = self;
-        symbol [ getArrayDisplayString %tmp.9 103 28 49 ];
+        symbol [ getArrayDisplayString %tmp.9 174 28 49 ];
         %tmp.9 = getv function %tmp.8 :getArrayDisplayString;
         %tmp.10 = lgetv %item;
-        symbol [ item %tmp.10 103 50 54 ];
+        symbol [ item %tmp.10 174 50 54 ];
         %tmp.11 = as %tmp.10 { (Toybox.Lang.Array) };
         %tmp.12 = invoke %tmp.8 %tmp.9(%tmp.11);
         lputv %displayString.1 %tmp.12;
-        symbol [ displayString %displayString.1 103 12 25 ];
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_102_46_104_8_stop:
-        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_102_8_109_8_if_end;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_102_8_109_8_if_false:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 104 15 ]
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_104_15_109_8_if_stmt:
+        symbol [ displayString %displayString.1 174 12 25 ];
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_173_46_175_8_stop:
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_173_8_180_8_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_173_8_180_8_if_false:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 175 15 ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_175_15_180_8_if_stmt:
         %tmp.13 = lgetv %item;
-        symbol [ item %tmp.13 104 18 22 ];
+        symbol [ item %tmp.13 175 18 22 ];
         %tmp.14 = as %tmp.13 { (!Toybox.Lang.Array) };
-        symbol [ Toybox %tmp.16 104 34 40 ];
+        symbol [ Toybox %tmp.16 175 34 40 ];
         %tmp.16 = getv ? :Toybox;
-        symbol [ Lang %tmp.17 104 41 45 ];
+        symbol [ Lang %tmp.17 175 41 45 ];
         %tmp.17 = getv %tmp.16 :Lang;
-        symbol [ Dictionary %tmp.18 104 46 56 ];
+        symbol [ Dictionary %tmp.18 175 46 56 ];
         %tmp.18 = getv %tmp.17 :Dictionary;
         %tmp.19 = isa %tmp.14 %tmp.18;
-        bf %tmp.19 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_104_15_109_8_if_else_false;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_104_15_109_8_if_true:
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_104_58_106_8_start:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 105 12 ]
+        bf %tmp.19 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_175_15_180_8_if_else_false;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_175_15_180_8_if_true:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_175_58_177_8_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 176 12 ]
         %tmp.20 = self;
-        symbol [ getDictionaryDisplayString %tmp.21 105 28 54 ];
+        symbol [ getDictionaryDisplayString %tmp.21 176 28 54 ];
         %tmp.21 = getv function %tmp.20 :getDictionaryDisplayString;
         %tmp.22 = lgetv %item;
-        symbol [ item %tmp.22 105 55 59 ];
+        symbol [ item %tmp.22 176 55 59 ];
         %tmp.23 = as %tmp.22 { (Toybox.Lang.Dictionary) && (!Toybox.Lang.Array) };
         %tmp.24 = invoke %tmp.20 %tmp.21(%tmp.23);
         lputv %displayString.1 %tmp.24;
-        symbol [ displayString %displayString.1 105 12 25 ];
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_104_58_106_8_stop:
-        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_104_15_109_8_if_end;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_104_15_109_8_if_else_false:
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_106_15_109_8_start:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 108 12 ]
+        symbol [ displayString %displayString.1 176 12 25 ];
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_175_58_177_8_stop:
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_175_15_180_8_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_175_15_180_8_if_else_false:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_177_15_180_8_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 179 12 ]
         %tmp.25 = lgetv %item;
-        symbol [ item %tmp.25 108 28 32 ];
+        symbol [ item %tmp.25 179 28 32 ];
         %tmp.26 = as %tmp.25 { (!Toybox.Lang.Array) && (!Toybox.Lang.Dictionary) };
-        symbol [ toString %tmp.27 108 33 41 ];
+        symbol [ toString %tmp.27 179 33 41 ];
         %tmp.27 = getv function %tmp.26 :toString;
         %tmp.28 = invoke %tmp.26 %tmp.27();
         lputv %displayString.1 %tmp.28;
-        symbol [ displayString %displayString.1 108 12 25 ];
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_106_15_109_8_stop:
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_104_15_109_8_if_end:
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_102_8_109_8_if_end:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 111 8 ]
+        symbol [ displayString %displayString.1 179 12 25 ];
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_177_15_180_8_stop:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_175_15_180_8_if_end:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_173_8_180_8_if_end:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 182 8 ]
         %tmp.29 = lgetv %displayString.1;
-        symbol [ displayString %tmp.29 111 15 28 ];
+        symbol [ displayString %tmp.29 182 15 28 ];
         ret %tmp.29;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_100_36_112_4_stop:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_171_37_183_4_stop:
     }
-    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 115; @symbol_functiondef = [changeBitmap,115,13,25]; @symbol_param<0> = [dc,115,26,28]; ]
-    function changeBitmap(dc) {
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_115_30_119_4_start:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 116 8 ]
-        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_115_30_119_4_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_115_30_119_4_stop" ]
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 186; @symbol_functiondef = [changeBitmap,186,13,25]; ]
+    function changeBitmap() {
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_186_28_190_4_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 187 8 ]
+        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_186_28_190_4_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_186_28_190_4_stop" ]
         %bitmap.1 = local;
-        symbol [ bitmap %bitmap.1 116 12 18 ];
+        symbol [ bitmap %bitmap.1 187 12 18 ];
         %tmp.1 = self;
-        symbol [ findDrawableById %tmp.2 116 21 37 ];
+        symbol [ findDrawableById %tmp.2 187 21 37 ];
         %tmp.2 = getv function %tmp.1 :findDrawableById;
         %tmp.3 = "logoc";
         %tmp.4 = invoke %tmp.1 %tmp.2(%tmp.3);
-        %tmp.5 = as %tmp.4 Toybox.WatchUi.Bitmap;
-        symbol [ Toybox %tmp.5 116 50 56 ];
-        symbol [ WatchUi %tmp.5 116 57 64 ];
-        symbol [ Bitmap %tmp.5 116 65 71 ];
+        %tmp.5 = as %tmp.4 Bitmap;
+        symbol [ Bitmap %tmp.5 187 50 56 ];
         lputv %bitmap.1 %tmp.5;
-        symbol [ bitmap %bitmap.1 116 12 18 ];
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 117 8 ]
+        symbol [ bitmap %bitmap.1 187 12 18 ];
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 188 8 ]
         %tmp.6 = lgetv %bitmap.1;
-        symbol [ bitmap %tmp.6 117 8 14 ];
-        symbol [ setBitmap %tmp.7 117 15 24 ];
+        symbol [ bitmap %tmp.6 188 8 14 ];
+        symbol [ setBitmap %tmp.7 188 15 24 ];
         %tmp.7 = getv function %tmp.6 :setBitmap;
-        symbol [ Rez %tmp.9 117 25 28 ];
+        symbol [ Rez %tmp.9 188 25 28 ];
         %tmp.9 = getv ? :Rez;
-        symbol [ Drawables %tmp.10 117 29 38 ];
+        symbol [ Drawables %tmp.10 188 29 38 ];
         %tmp.10 = getv %tmp.9 :Drawables;
-        symbol [ logoc_eng %tmp.11 117 39 48 ];
+        symbol [ logoc_eng %tmp.11 188 39 48 ];
         %tmp.11 = getv %tmp.10 :logoc_eng;
         invoke %tmp.6 %tmp.7(%tmp.11);
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 118 9 ]
-        symbol [ View %tmp.13 118 9 13 ];
-        %tmp.13 = getv ? :View;
-        symbol [ onUpdate %tmp.14 118 14 22 ];
-        %tmp.14 = getv function %tmp.13 :onUpdate;
-        %tmp.15 = lgetv %dc;
-        symbol [ dc %tmp.15 118 23 25 ];
-        invoke %tmp.13 %tmp.14(%tmp.15);
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_115_30_119_4_stop:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_186_28_190_4_stop:
     }
-    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 122; @symbol_functiondef = [getSigWeatherDisplayString,122,13,39]; @symbol_param<0> = [array,122,40,45]; @symbol_param<1> = [lang,122,47,51]; ]
-    function getSigWeatherDisplayString(array, lang) {
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_122_53_137_4_start:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 123 8 ]
-        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_122_53_137_4_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_122_53_137_4_stop" ]
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 193; @symbol_functiondef = [getSigWeatherDisplayString,193,13,39]; @symbol_param<0> = [array,193,40,45]; @symbol_param<0>_type<0> = [Dictionary,193,49,59]; @symbol_param<1> = [lang,193,61,65]; ]
+    function getSigWeatherDisplayString(array as Dictionary, lang) {
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_193_67_210_4_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 194 8 ]
+        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_193_67_210_4_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_193_67_210_4_stop" ]
         %displayString.1 = local;
-        symbol [ displayString %displayString.1 123 12 25 ];
+        symbol [ displayString %displayString.1 194 12 25 ];
         %tmp.1 = "";
         lputv %displayString.1 %tmp.1;
-        symbol [ displayString %displayString.1 123 12 25 ];
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 124 8 ]
-        for @D_web_site_02wsgarmin_source_JwsGlanceView_mc_124_8_135_8_for_test @D_web_site_02wsgarmin_source_JwsGlanceView_mc_124_8_135_8_for_incr @D_web_site_02wsgarmin_source_JwsGlanceView_mc_124_8_135_8_for_end;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_124_8_135_8_for_init:
-        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_124_8_135_8_for_begin" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_124_8_135_8_for_end" ]
+        symbol [ displayString %displayString.1 194 12 25 ];
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 195 8 ]
+        for @D_web_site_02wsgarmin_source_JwsGlanceView_mc_195_8_208_8_for_test @D_web_site_02wsgarmin_source_JwsGlanceView_mc_195_8_208_8_for_incr @D_web_site_02wsgarmin_source_JwsGlanceView_mc_195_8_208_8_for_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_195_8_208_8_for_init:
+        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_195_8_208_8_for_begin" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_195_8_208_8_for_end" ]
         %index.2 = local;
-        symbol [ index %index.2 124 16 21 ];
+        symbol [ index %index.2 195 16 21 ];
         %tmp.2 = 1;
         lputv %index.2 %tmp.2;
-        symbol [ index %index.2 124 16 21 ];
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_124_8_135_8_for_test:
+        symbol [ index %index.2 195 16 21 ];
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_195_8_208_8_for_test:
         %tmp.3 = lgetv %index.2;
-        symbol [ index %tmp.3 124 27 32 ];
+        symbol [ index %tmp.3 195 27 32 ];
         %tmp.4 = lgetv %array;
-        symbol [ array %tmp.4 124 35 40 ];
-        symbol [ size %tmp.5 124 41 45 ];
+        symbol [ array %tmp.4 195 35 40 ];
+        symbol [ size %tmp.5 195 41 45 ];
         %tmp.5 = getv function %tmp.4 :size;
         %tmp.6 = invoke %tmp.4 %tmp.5();
         %tmp.7 = lt %tmp.3 %tmp.6;
-        bf %tmp.7 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_124_8_135_8_for_end;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_124_8_135_8_for_begin:
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_124_58_135_8_start:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 125 12 ]
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_125_12_130_12_if_stmt:
+        bf %tmp.7 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_195_8_208_8_for_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_195_8_208_8_for_begin:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_195_58_208_8_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 196 12 ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_196_12_203_12_if_stmt:
         %tmp.8 = lgetv %index.2;
-        symbol [ index %tmp.8 125 16 21 ];
+        symbol [ index %tmp.8 196 16 21 ];
         %tmp.9 = 1;
         %tmp.10 = eq %tmp.8 %tmp.9;
-        bf %tmp.10 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_125_12_130_12_if_else_false;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_125_12_130_12_if_true:
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_125_27_127_12_start:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 126 16 ]
-        %tmp.11 = self;
-        symbol [ getSigWeatherDictionaryDisplayString %tmp.12 126 32 68 ];
-        %tmp.12 = getv function %tmp.11 :getSigWeatherDictionaryDisplayString;
-        %tmp.13 = lgetv %array;
-        symbol [ array %tmp.13 126 69 74 ];
-        %tmp.14 = lgetv %index.2;
-        symbol [ index %tmp.14 126 75 80 ];
-        %tmp.15 = agetv %tmp.13 %tmp.14;
-        %tmp.16 = lgetv %lang;
-        symbol [ lang %tmp.16 126 83 87 ];
-        %tmp.17 = invoke %tmp.11 %tmp.12(%tmp.15, %tmp.16);
-        symbol [ mWindHumTitle ? 126 16 29 ];
-        putv self :mWindHumTitle %tmp.17;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_125_27_127_12_stop:
-        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_125_12_130_12_if_end;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_125_12_130_12_if_else_false:
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_128_17_130_12_start:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 129 16 ]
-        symbol [ mWindHumTitle %tmp.19 129 32 45 ];
-        %tmp.19 = getv ? :mWindHumTitle;
-        %tmp.20 = self;
-        symbol [ getSigWeatherDictionaryDisplayString %tmp.21 129 48 84 ];
-        %tmp.21 = getv function %tmp.20 :getSigWeatherDictionaryDisplayString;
-        %tmp.22 = lgetv %array;
-        symbol [ array %tmp.22 129 85 90 ];
-        %tmp.23 = lgetv %index.2;
-        symbol [ index %tmp.23 129 91 96 ];
-        %tmp.24 = agetv %tmp.22 %tmp.23;
-        %tmp.25 = lgetv %lang;
-        symbol [ lang %tmp.25 129 99 103 ];
-        %tmp.26 = invoke %tmp.20 %tmp.21(%tmp.24, %tmp.25);
-        %tmp.27 = add %tmp.19 %tmp.26;
-        symbol [ mWindHumTitle ? 129 16 29 ];
-        putv self :mWindHumTitle %tmp.27;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_128_17_130_12_stop:
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_125_12_130_12_if_end:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 131 12 ]
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_131_12_133_12_if_stmt:
-        %tmp.28 = lgetv %index.2;
-        symbol [ index %tmp.28 131 15 20 ];
-        %tmp.29 = lgetv %array;
-        symbol [ array %tmp.29 131 24 29 ];
-        symbol [ size %tmp.30 131 30 34 ];
-        %tmp.30 = getv function %tmp.29 :size;
-        %tmp.31 = invoke %tmp.29 %tmp.30();
-        %tmp.32 = 1;
-        %tmp.33 = sub %tmp.31 %tmp.32;
-        %tmp.34 = lt %tmp.28 %tmp.33;
-        bf %tmp.34 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_131_12_133_12_if_end;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_131_12_133_12_if_true:
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_131_41_133_12_start:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 132 16 ]
-        %tmp.35 = lgetv %displayString.1;
-        symbol [ displayString %tmp.35 132 16 29 ];
-        %tmp.36 = "";
-        %tmp.37 = add %tmp.35 %tmp.36;
-        lputv %displayString.1 %tmp.37;
-        symbol [ displayString %displayString.1 132 16 29 ];
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_131_41_133_12_stop:
-        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_131_12_133_12_if_end;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_131_12_133_12_if_end:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 134 11 ]
-        %tmp.38 = lgetv %displayString.1;
-        symbol [ displayString %tmp.38 134 11 24 ];
-        %tmp.39 = "";
-        %tmp.40 = add %tmp.38 %tmp.39;
-        lputv %displayString.1 %tmp.40;
-        symbol [ displayString %displayString.1 134 11 24 ];
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_124_58_135_8_stop:
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_124_8_135_8_for_incr:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 124 ]
-        %tmp.43 = lgetv %index.2;
-        symbol [ index %tmp.43 124 49 54 ];
-        %tmp.44 = add %tmp.43 1;
-        lputv %index.2 %tmp.44;
-        symbol [ index %index.2 124 49 54 ];
-        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_124_8_135_8_for_test;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_124_8_135_8_for_end:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 136 8 ]
-        %tmp.45 = lgetv %displayString.1;
-        symbol [ displayString %tmp.45 136 15 28 ];
-        ret %tmp.45;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_122_53_137_4_stop:
+        bf %tmp.10 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_196_12_203_12_if_else_false;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_196_12_203_12_if_true:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_196_27_199_12_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 197 16 ]
+        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_196_27_199_12_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_196_27_199_12_stop" ]
+        %con.3 = local;
+        symbol [ con %con.3 197 20 23 ];
+        %tmp.11 = lgetv %array;
+        symbol [ array %tmp.11 197 26 31 ];
+        %tmp.12 = lgetv %index.2;
+        symbol [ index %tmp.12 197 32 37 ];
+        %tmp.13 = agetv %tmp.11 %tmp.12;
+        %tmp.14 = as %tmp.13 Dictionary;
+        symbol [ Dictionary %tmp.14 197 42 52 ];
+        lputv %con.3 %tmp.14;
+        symbol [ con %con.3 197 20 23 ];
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 198 16 ]
+        %tmp.15 = lgetv %con.3;
+        symbol [ con %tmp.15 198 32 35 ];
+        %tmp.16 = "sigtitle";
+        %tmp.17 = lgetv %lang;
+        symbol [ lang %tmp.17 198 47 51 ];
+        %tmp.18 = add %tmp.16 %tmp.17;
+        %tmp.19 = agetv %tmp.15 %tmp.18;
+        symbol [ mWindHumTitle ? 198 16 29 ];
+        putv self :mWindHumTitle %tmp.19;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_196_27_199_12_stop:
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_196_12_203_12_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_196_12_203_12_if_else_false:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_200_17_203_12_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 202 14 ]
+        %tmp.20 = lgetv %displayString.1;
+        symbol [ displayString %tmp.20 202 14 27 ];
+        %tmp.21 = self;
+        symbol [ getSigWeatherDictionaryDisplayString %tmp.22 202 32 68 ];
+        %tmp.22 = getv function %tmp.21 :getSigWeatherDictionaryDisplayString;
+        %tmp.23 = lgetv %array;
+        symbol [ array %tmp.23 202 69 74 ];
+        %tmp.24 = lgetv %index.2;
+        symbol [ index %tmp.24 202 75 80 ];
+        %tmp.25 = agetv %tmp.23 %tmp.24;
+        %tmp.26 = lgetv %lang;
+        symbol [ lang %tmp.26 202 83 87 ];
+        %tmp.27 = invoke %tmp.21 %tmp.22(%tmp.25, %tmp.26);
+        %tmp.28 = add %tmp.20 %tmp.27;
+        lputv %displayString.1 %tmp.28;
+        symbol [ displayString %displayString.1 202 14 27 ];
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_200_17_203_12_stop:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_196_12_203_12_if_end:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 204 12 ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_204_12_206_12_if_stmt:
+        %tmp.29 = lgetv %index.2;
+        symbol [ index %tmp.29 204 15 20 ];
+        %tmp.30 = lgetv %array;
+        symbol [ array %tmp.30 204 24 29 ];
+        symbol [ size %tmp.31 204 30 34 ];
+        %tmp.31 = getv function %tmp.30 :size;
+        %tmp.32 = invoke %tmp.30 %tmp.31();
+        %tmp.33 = 1;
+        %tmp.34 = sub %tmp.32 %tmp.33;
+        %tmp.35 = lt %tmp.29 %tmp.34;
+        bf %tmp.35 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_204_12_206_12_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_204_12_206_12_if_true:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_204_41_206_12_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 205 16 ]
+        %tmp.36 = lgetv %displayString.1;
+        symbol [ displayString %tmp.36 205 16 29 ];
+        %tmp.37 = "";
+        %tmp.38 = add %tmp.36 %tmp.37;
+        lputv %displayString.1 %tmp.38;
+        symbol [ displayString %displayString.1 205 16 29 ];
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_204_41_206_12_stop:
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_204_12_206_12_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_204_12_206_12_if_end:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 207 11 ]
+        %tmp.39 = lgetv %displayString.1;
+        symbol [ displayString %tmp.39 207 11 24 ];
+        %tmp.40 = "";
+        %tmp.41 = add %tmp.39 %tmp.40;
+        lputv %displayString.1 %tmp.41;
+        symbol [ displayString %displayString.1 207 11 24 ];
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_195_58_208_8_stop:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_195_8_208_8_for_incr:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 195 ]
+        %tmp.44 = lgetv %index.2;
+        symbol [ index %tmp.44 195 49 54 ];
+        %tmp.45 = add %tmp.44 1;
+        lputv %index.2 %tmp.45;
+        symbol [ index %index.2 195 49 54 ];
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_195_8_208_8_for_test;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_195_8_208_8_for_end:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 209 8 ]
+        %tmp.46 = lgetv %displayString.1;
+        symbol [ displayString %tmp.46 209 15 28 ];
+        ret %tmp.46;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_193_67_210_4_stop:
     }
-    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 140; @symbol_functiondef = [getArrayDisplayString,140,13,34]; @symbol_param<0> = [array,140,35,40]; ]
-    function getArrayDisplayString(array) {
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_140_42_156_4_start:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 141 9 ]
-        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_140_42_156_4_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_140_42_156_4_stop" ]
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 213; @symbol_functiondef = [getArrayDisplayString,213,13,34]; @symbol_param<0> = [array,213,35,40]; @symbol_param<0>_type<0> = [Array,213,44,49]; ]
+    function getArrayDisplayString(array as Array) {
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_213_51_229_4_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 214 9 ]
+        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_213_51_229_4_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_213_51_229_4_stop" ]
         %displayString.1 = local;
-        symbol [ displayString %displayString.1 141 13 26 ];
+        symbol [ displayString %displayString.1 214 13 26 ];
         %tmp.1 = "";
         lputv %displayString.1 %tmp.1;
-        symbol [ displayString %displayString.1 141 13 26 ];
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 142 8 ]
+        symbol [ displayString %displayString.1 214 13 26 ];
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 215 8 ]
         %tmp.2 = lgetv %displayString.1;
-        symbol [ displayString %tmp.2 142 8 21 ];
+        symbol [ displayString %tmp.2 215 8 21 ];
         %tmp.3 = "[\n";
         %tmp.4 = add %tmp.2 %tmp.3;
         lputv %displayString.1 %tmp.4;
-        symbol [ displayString %displayString.1 142 8 21 ];
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 143 8 ]
-        for @D_web_site_02wsgarmin_source_JwsGlanceView_mc_143_8_152_8_for_test @D_web_site_02wsgarmin_source_JwsGlanceView_mc_143_8_152_8_for_incr @D_web_site_02wsgarmin_source_JwsGlanceView_mc_143_8_152_8_for_end;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_143_8_152_8_for_init:
-        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_143_8_152_8_for_begin" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_143_8_152_8_for_end" ]
+        symbol [ displayString %displayString.1 215 8 21 ];
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 216 8 ]
+        for @D_web_site_02wsgarmin_source_JwsGlanceView_mc_216_8_225_8_for_test @D_web_site_02wsgarmin_source_JwsGlanceView_mc_216_8_225_8_for_incr @D_web_site_02wsgarmin_source_JwsGlanceView_mc_216_8_225_8_for_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_216_8_225_8_for_init:
+        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_216_8_225_8_for_begin" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_216_8_225_8_for_end" ]
         %index.2 = local;
-        symbol [ index %index.2 143 16 21 ];
+        symbol [ index %index.2 216 16 21 ];
         %tmp.5 = 0;
         lputv %index.2 %tmp.5;
-        symbol [ index %index.2 143 16 21 ];
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_143_8_152_8_for_test:
+        symbol [ index %index.2 216 16 21 ];
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_216_8_225_8_for_test:
         %tmp.6 = lgetv %index.2;
-        symbol [ index %tmp.6 143 27 32 ];
+        symbol [ index %tmp.6 216 27 32 ];
         %tmp.7 = lgetv %array;
-        symbol [ array %tmp.7 143 35 40 ];
-        symbol [ size %tmp.8 143 41 45 ];
+        symbol [ array %tmp.7 216 35 40 ];
+        symbol [ size %tmp.8 216 41 45 ];
         %tmp.8 = getv function %tmp.7 :size;
         %tmp.9 = invoke %tmp.7 %tmp.8();
         %tmp.10 = lt %tmp.6 %tmp.9;
-        bf %tmp.10 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_143_8_152_8_for_end;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_143_8_152_8_for_begin:
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_143_58_152_8_start:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 145 12 ]
+        bf %tmp.10 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_216_8_225_8_for_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_216_8_225_8_for_begin:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_216_58_225_8_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 218 12 ]
         %tmp.11 = lgetv %displayString.1;
-        symbol [ displayString %tmp.11 145 12 25 ];
+        symbol [ displayString %tmp.11 218 12 25 ];
         %tmp.12 = lgetv %array;
-        symbol [ array %tmp.12 145 29 34 ];
+        symbol [ array %tmp.12 218 29 34 ];
         %tmp.13 = lgetv %index.2;
-        symbol [ index %tmp.13 145 35 40 ];
+        symbol [ index %tmp.13 218 35 40 ];
         %tmp.14 = agetv %tmp.12 %tmp.13;
-        symbol [ toString %tmp.15 145 42 50 ];
+        symbol [ toString %tmp.15 218 42 50 ];
         %tmp.15 = getv function %tmp.14 :toString;
         %tmp.16 = invoke %tmp.14 %tmp.15();
         %tmp.17 = add %tmp.11 %tmp.16;
         lputv %displayString.1 %tmp.17;
-        symbol [ displayString %displayString.1 145 12 25 ];
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 147 12 ]
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_147_12_149_12_if_stmt:
+        symbol [ displayString %displayString.1 218 12 25 ];
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 220 12 ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_220_12_222_12_if_stmt:
         %tmp.18 = lgetv %index.2;
-        symbol [ index %tmp.18 147 15 20 ];
+        symbol [ index %tmp.18 220 15 20 ];
         %tmp.19 = lgetv %array;
-        symbol [ array %tmp.19 147 24 29 ];
-        symbol [ size %tmp.20 147 30 34 ];
+        symbol [ array %tmp.19 220 24 29 ];
+        symbol [ size %tmp.20 220 30 34 ];
         %tmp.20 = getv function %tmp.19 :size;
         %tmp.21 = invoke %tmp.19 %tmp.20();
         %tmp.22 = 1;
         %tmp.23 = sub %tmp.21 %tmp.22;
         %tmp.24 = lt %tmp.18 %tmp.23;
-        bf %tmp.24 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_147_12_149_12_if_end;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_147_12_149_12_if_true:
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_147_41_149_12_start:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 148 16 ]
+        bf %tmp.24 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_220_12_222_12_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_220_12_222_12_if_true:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_220_41_222_12_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 221 16 ]
         %tmp.25 = lgetv %displayString.1;
-        symbol [ displayString %tmp.25 148 16 29 ];
+        symbol [ displayString %tmp.25 221 16 29 ];
         %tmp.26 = ",";
         %tmp.27 = add %tmp.25 %tmp.26;
         lputv %displayString.1 %tmp.27;
-        symbol [ displayString %displayString.1 148 16 29 ];
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_147_41_149_12_stop:
-        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_147_12_149_12_if_end;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_147_12_149_12_if_end:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 151 12 ]
+        symbol [ displayString %displayString.1 221 16 29 ];
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_220_41_222_12_stop:
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_220_12_222_12_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_220_12_222_12_if_end:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 224 12 ]
         %tmp.28 = lgetv %displayString.1;
-        symbol [ displayString %tmp.28 151 12 25 ];
+        symbol [ displayString %tmp.28 224 12 25 ];
         %tmp.29 = "\n";
         %tmp.30 = add %tmp.28 %tmp.29;
         lputv %displayString.1 %tmp.30;
-        symbol [ displayString %displayString.1 151 12 25 ];
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_143_58_152_8_stop:
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_143_8_152_8_for_incr:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 143 ]
+        symbol [ displayString %displayString.1 224 12 25 ];
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_216_58_225_8_stop:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_216_8_225_8_for_incr:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 216 ]
         %tmp.33 = lgetv %index.2;
-        symbol [ index %tmp.33 143 49 54 ];
+        symbol [ index %tmp.33 216 49 54 ];
         %tmp.34 = add %tmp.33 1;
         lputv %index.2 %tmp.34;
-        symbol [ index %index.2 143 49 54 ];
-        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_143_8_152_8_for_test;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_143_8_152_8_for_end:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 153 8 ]
+        symbol [ index %index.2 216 49 54 ];
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_216_8_225_8_for_test;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_216_8_225_8_for_end:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 226 8 ]
         %tmp.35 = lgetv %displayString.1;
-        symbol [ displayString %tmp.35 153 8 21 ];
+        symbol [ displayString %tmp.35 226 8 21 ];
         %tmp.36 = "]\n";
         %tmp.37 = add %tmp.35 %tmp.36;
         lputv %displayString.1 %tmp.37;
-        symbol [ displayString %displayString.1 153 8 21 ];
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 155 8 ]
+        symbol [ displayString %displayString.1 226 8 21 ];
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 228 8 ]
         %tmp.38 = lgetv %displayString.1;
-        symbol [ displayString %tmp.38 155 15 28 ];
+        symbol [ displayString %tmp.38 228 15 28 ];
         ret %tmp.38;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_140_42_156_4_stop:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_213_51_229_4_stop:
     }
-    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 159; @symbol_functiondef = [getSigWeatherDictionaryDisplayString,159,13,49]; @symbol_param<0> = [dictionary,159,50,60]; @symbol_param<1> = [lang,159,62,66]; ]
-    function getSigWeatherDictionaryDisplayString(dictionary, lang) {
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_159_68_164_4_start:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 160 8 ]
-        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_159_68_164_4_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_159_68_164_4_stop" ]
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 232; @symbol_functiondef = [getSigWeatherDictionaryDisplayString,232,13,49]; @symbol_param<0> = [dictionary,232,50,60]; @symbol_param<0>_type<0> = [Dictionary,232,64,74]; @symbol_param<1> = [lang,232,76,80]; ]
+    function getSigWeatherDictionaryDisplayString(dictionary as Dictionary, lang) {
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_232_82_237_4_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 233 8 ]
+        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_232_82_237_4_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_232_82_237_4_stop" ]
         %displayString.1 = local;
-        symbol [ displayString %displayString.1 160 12 25 ];
+        symbol [ displayString %displayString.1 233 12 25 ];
         %tmp.1 = "";
         lputv %displayString.1 %tmp.1;
-        symbol [ displayString %displayString.1 160 12 25 ];
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 161 8 ]
+        symbol [ displayString %displayString.1 233 12 25 ];
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 234 8 ]
         %tmp.2 = lgetv %displayString.1;
-        symbol [ displayString %tmp.2 161 8 21 ];
+        symbol [ displayString %tmp.2 234 8 21 ];
         %tmp.3 = lgetv %dictionary;
-        symbol [ dictionary %tmp.3 161 25 35 ];
+        symbol [ dictionary %tmp.3 234 25 35 ];
         %tmp.4 = "sigtitle";
         %tmp.5 = lgetv %lang;
-        symbol [ lang %tmp.5 161 47 51 ];
+        symbol [ lang %tmp.5 234 47 51 ];
         %tmp.6 = add %tmp.4 %tmp.5;
         %tmp.7 = agetv %tmp.3 %tmp.6;
         %tmp.8 = " \n";
         %tmp.9 = add %tmp.7 %tmp.8;
         %tmp.10 = lgetv %dictionary;
-        symbol [ dictionary %tmp.10 161 64 74 ];
+        symbol [ dictionary %tmp.10 234 64 74 ];
         %tmp.11 = "sigext";
         %tmp.12 = lgetv %lang;
-        symbol [ lang %tmp.12 161 84 88 ];
+        symbol [ lang %tmp.12 234 84 88 ];
         %tmp.13 = add %tmp.11 %tmp.12;
         %tmp.14 = agetv %tmp.10 %tmp.13;
         %tmp.15 = add %tmp.9 %tmp.14;
         %tmp.16 = add %tmp.2 %tmp.15;
         lputv %displayString.1 %tmp.16;
-        symbol [ displayString %displayString.1 161 8 21 ];
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 163 8 ]
+        symbol [ displayString %displayString.1 234 8 21 ];
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 236 8 ]
         %tmp.17 = lgetv %displayString.1;
-        symbol [ displayString %tmp.17 163 15 28 ];
+        symbol [ displayString %tmp.17 236 15 28 ];
         ret %tmp.17;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_159_68_164_4_stop:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_232_82_237_4_stop:
     }
-    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 167; @symbol_functiondef = [getDictionaryDisplayString,167,13,39]; @symbol_param<0> = [dictionary,167,40,50]; ]
-    function getDictionaryDisplayString(dictionary) {
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_167_52_185_4_start:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 168 8 ]
-        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_167_52_185_4_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_167_52_185_4_stop" ]
+    [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 240; @symbol_functiondef = [getDictionaryDisplayString,240,13,39]; @symbol_param<0> = [dictionary,240,40,50]; @symbol_param<0>_type<0> = [Dictionary,240,54,64]; ]
+    function getDictionaryDisplayString(dictionary as Dictionary) {
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_240_66_258_4_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 241 8 ]
+        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_240_66_258_4_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_240_66_258_4_stop" ]
         %displayString.1 = local;
-        symbol [ displayString %displayString.1 168 12 25 ];
+        symbol [ displayString %displayString.1 241 12 25 ];
         %tmp.1 = "\n";
         lputv %displayString.1 %tmp.1;
-        symbol [ displayString %displayString.1 168 12 25 ];
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 169 8 ]
+        symbol [ displayString %displayString.1 241 12 25 ];
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 242 8 ]
         %tmp.2 = lgetv %displayString.1;
-        symbol [ displayString %tmp.2 169 8 21 ];
+        symbol [ displayString %tmp.2 242 8 21 ];
         %tmp.3 = "{";
         %tmp.4 = add %tmp.2 %tmp.3;
         lputv %displayString.1 %tmp.4;
-        symbol [ displayString %displayString.1 169 8 21 ];
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 170 8 ]
-        for @D_web_site_02wsgarmin_source_JwsGlanceView_mc_170_8_181_8_for_test @D_web_site_02wsgarmin_source_JwsGlanceView_mc_170_8_181_8_for_incr @D_web_site_02wsgarmin_source_JwsGlanceView_mc_170_8_181_8_for_end;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_170_8_181_8_for_init:
-        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_170_8_181_8_for_begin" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_170_8_181_8_for_end" ]
+        symbol [ displayString %displayString.1 242 8 21 ];
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 243 8 ]
+        for @D_web_site_02wsgarmin_source_JwsGlanceView_mc_243_8_254_8_for_test @D_web_site_02wsgarmin_source_JwsGlanceView_mc_243_8_254_8_for_incr @D_web_site_02wsgarmin_source_JwsGlanceView_mc_243_8_254_8_for_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_243_8_254_8_for_init:
+        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_243_8_254_8_for_begin" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_243_8_254_8_for_end" ]
         %index.2 = local;
-        symbol [ index %index.2 170 16 21 ];
+        symbol [ index %index.2 243 16 21 ];
         %tmp.5 = 0;
         lputv %index.2 %tmp.5;
-        symbol [ index %index.2 170 16 21 ];
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_170_8_181_8_for_test:
+        symbol [ index %index.2 243 16 21 ];
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_243_8_254_8_for_test:
         %tmp.6 = lgetv %index.2;
-        symbol [ index %tmp.6 170 27 32 ];
+        symbol [ index %tmp.6 243 27 32 ];
         %tmp.7 = lgetv %dictionary;
-        symbol [ dictionary %tmp.7 170 35 45 ];
-        symbol [ keys %tmp.8 170 46 50 ];
+        symbol [ dictionary %tmp.7 243 35 45 ];
+        symbol [ keys %tmp.8 243 46 50 ];
         %tmp.8 = getv function %tmp.7 :keys;
         %tmp.9 = invoke %tmp.7 %tmp.8();
-        symbol [ size %tmp.10 170 53 57 ];
+        symbol [ size %tmp.10 243 53 57 ];
         %tmp.10 = getv function %tmp.9 :size;
         %tmp.11 = invoke %tmp.9 %tmp.10();
         %tmp.12 = lt %tmp.6 %tmp.11;
-        bf %tmp.12 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_170_8_181_8_for_end;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_170_8_181_8_for_begin:
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_170_70_181_8_start:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 171 12 ]
-        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_170_70_181_8_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_170_70_181_8_stop" ]
+        bf %tmp.12 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_243_8_254_8_for_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_243_8_254_8_for_begin:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_243_70_254_8_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 244 12 ]
+        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_243_70_254_8_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_243_70_254_8_stop" ]
         %key.3 = local;
-        symbol [ key %key.3 171 16 19 ];
+        symbol [ key %key.3 244 16 19 ];
         %tmp.13 = lgetv %dictionary;
-        symbol [ dictionary %tmp.13 171 22 32 ];
-        symbol [ keys %tmp.14 171 33 37 ];
+        symbol [ dictionary %tmp.13 244 22 32 ];
+        symbol [ keys %tmp.14 244 33 37 ];
         %tmp.14 = getv function %tmp.13 :keys;
         %tmp.15 = invoke %tmp.13 %tmp.14();
         %tmp.16 = lgetv %index.2;
-        symbol [ index %tmp.16 171 40 45 ];
+        symbol [ index %tmp.16 244 40 45 ];
         %tmp.17 = agetv %tmp.15 %tmp.16;
         lputv %key.3 %tmp.17;
-        symbol [ key %key.3 171 16 19 ];
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 172 12 ]
-        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_170_70_181_8_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_170_70_181_8_stop" ]
+        symbol [ key %key.3 244 16 19 ];
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 245 12 ]
+        [ "D_web_site_02wsgarmin_source_JwsGlanceView_mc_243_70_254_8_start" "D_web_site_02wsgarmin_source_JwsGlanceView_mc_243_70_254_8_stop" ]
         %value.4 = local;
-        symbol [ value %value.4 172 16 21 ];
+        symbol [ value %value.4 245 16 21 ];
         %tmp.18 = lgetv %dictionary;
-        symbol [ dictionary %tmp.18 172 24 34 ];
+        symbol [ dictionary %tmp.18 245 24 34 ];
         %tmp.19 = lgetv %key.3;
-        symbol [ key %tmp.19 172 35 38 ];
+        symbol [ key %tmp.19 245 35 38 ];
         %tmp.20 = agetv %tmp.18 %tmp.19;
         lputv %value.4 %tmp.20;
-        symbol [ value %value.4 172 16 21 ];
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 174 12 ]
+        symbol [ value %value.4 245 16 21 ];
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 247 12 ]
         %tmp.21 = lgetv %displayString.1;
-        symbol [ displayString %tmp.21 174 12 25 ];
+        symbol [ displayString %tmp.21 247 12 25 ];
         %tmp.22 = lgetv %key.3;
-        symbol [ key %tmp.22 174 29 32 ];
+        symbol [ key %tmp.22 247 29 32 ];
         %tmp.23 = "=>";
         %tmp.24 = add %tmp.22 %tmp.23;
         %tmp.25 = lgetv %value.4;
-        symbol [ value %tmp.25 174 42 47 ];
-        symbol [ toString %tmp.26 174 48 56 ];
+        symbol [ value %tmp.25 247 42 47 ];
+        symbol [ toString %tmp.26 247 48 56 ];
         %tmp.26 = getv function %tmp.25 :toString;
         %tmp.27 = invoke %tmp.25 %tmp.26();
         %tmp.28 = add %tmp.24 %tmp.27;
         %tmp.29 = add %tmp.21 %tmp.28;
         lputv %displayString.1 %tmp.29;
-        symbol [ displayString %displayString.1 174 12 25 ];
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 176 12 ]
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_176_12_178_12_if_stmt:
+        symbol [ displayString %displayString.1 247 12 25 ];
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 249 12 ]
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_249_12_251_12_if_stmt:
         %tmp.30 = lgetv %index.2;
-        symbol [ index %tmp.30 176 15 20 ];
+        symbol [ index %tmp.30 249 15 20 ];
         %tmp.31 = lgetv %dictionary;
-        symbol [ dictionary %tmp.31 176 24 34 ];
-        symbol [ keys %tmp.32 176 35 39 ];
+        symbol [ dictionary %tmp.31 249 24 34 ];
+        symbol [ keys %tmp.32 249 35 39 ];
         %tmp.32 = getv function %tmp.31 :keys;
         %tmp.33 = invoke %tmp.31 %tmp.32();
-        symbol [ size %tmp.34 176 42 46 ];
+        symbol [ size %tmp.34 249 42 46 ];
         %tmp.34 = getv function %tmp.33 :size;
         %tmp.35 = invoke %tmp.33 %tmp.34();
         %tmp.36 = 1;
         %tmp.37 = sub %tmp.35 %tmp.36;
         %tmp.38 = lt %tmp.30 %tmp.37;
-        bf %tmp.38 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_176_12_178_12_if_end;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_176_12_178_12_if_true:
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_176_53_178_12_start:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 177 16 ]
+        bf %tmp.38 @D_web_site_02wsgarmin_source_JwsGlanceView_mc_249_12_251_12_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_249_12_251_12_if_true:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_249_53_251_12_start:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 250 16 ]
         %tmp.39 = lgetv %displayString.1;
-        symbol [ displayString %tmp.39 177 16 29 ];
+        symbol [ displayString %tmp.39 250 16 29 ];
         %tmp.40 = ",";
         %tmp.41 = add %tmp.39 %tmp.40;
         lputv %displayString.1 %tmp.41;
-        symbol [ displayString %displayString.1 177 16 29 ];
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_176_53_178_12_stop:
-        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_176_12_178_12_if_end;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_176_12_178_12_if_end:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 180 12 ]
+        symbol [ displayString %displayString.1 250 16 29 ];
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_249_53_251_12_stop:
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_249_12_251_12_if_end;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_249_12_251_12_if_end:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 253 12 ]
         %tmp.42 = lgetv %displayString.1;
-        symbol [ displayString %tmp.42 180 12 25 ];
+        symbol [ displayString %tmp.42 253 12 25 ];
         %tmp.43 = "\n";
         %tmp.44 = add %tmp.42 %tmp.43;
         lputv %displayString.1 %tmp.44;
-        symbol [ displayString %displayString.1 180 12 25 ];
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_170_70_181_8_stop:
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_170_8_181_8_for_incr:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 170 ]
+        symbol [ displayString %displayString.1 253 12 25 ];
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_243_70_254_8_stop:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_243_8_254_8_for_incr:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 243 ]
         %tmp.47 = lgetv %index.2;
-        symbol [ index %tmp.47 170 61 66 ];
+        symbol [ index %tmp.47 243 61 66 ];
         %tmp.48 = add %tmp.47 1;
         lputv %index.2 %tmp.48;
-        symbol [ index %index.2 170 61 66 ];
-        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_170_8_181_8_for_test;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_170_8_181_8_for_end:
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 182 8 ]
+        symbol [ index %index.2 243 61 66 ];
+        goto @D_web_site_02wsgarmin_source_JwsGlanceView_mc_243_8_254_8_for_test;
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_243_8_254_8_for_end:
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 255 8 ]
         %tmp.49 = lgetv %displayString.1;
-        symbol [ displayString %tmp.49 182 8 21 ];
+        symbol [ displayString %tmp.49 255 8 21 ];
         %tmp.50 = "}";
         %tmp.51 = add %tmp.49 %tmp.50;
         lputv %displayString.1 %tmp.51;
-        symbol [ displayString %displayString.1 182 8 21 ];
-[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 184 8 ]
+        symbol [ displayString %displayString.1 255 8 21 ];
+[ "D:\web\site\02wsgarmin\source\JwsGlanceView.mc" 257 8 ]
         %tmp.52 = lgetv %displayString.1;
-        symbol [ displayString %tmp.52 184 15 28 ];
+        symbol [ displayString %tmp.52 257 15 28 ];
         ret %tmp.52;
-D_web_site_02wsgarmin_source_JwsGlanceView_mc_167_52_185_4_stop:
+D_web_site_02wsgarmin_source_JwsGlanceView_mc_240_66_258_4_stop:
     }
 }
 [ @file = "D:\web\site\02wsgarmin\source\JwsGlanceView.mc"; @line = 1; ]

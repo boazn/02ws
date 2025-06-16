@@ -4,11 +4,11 @@
 // Application Developer Agreement.
 //
 
-using Toybox.Communications;
-using Toybox.WatchUi;
-using Toybox.Application.Storage;
-using Toybox.System;
-using Toybox.Lang;
+import Toybox.Communications;
+import Toybox.WatchUi;
+import Toybox.Application.Storage;
+import Toybox.System;
+import Toybox.Lang;
 (:glance)
 class JwsDelegate extends WatchUi.BehaviorDelegate {
     var notify;
@@ -20,8 +20,8 @@ class JwsDelegate extends WatchUi.BehaviorDelegate {
     }
 
     function doNextPage(){
-        makeRequest();
-        page = (page == 2) ? 1 : page + 1;
+       makeRequest();
+        page = (page == 3) ? 1 : page + 1;
         switchView(page);
         WatchUi.requestUpdate();
         return true;
@@ -30,12 +30,15 @@ class JwsDelegate extends WatchUi.BehaviorDelegate {
 
         var newView = null;
         var inputDelegate = new JwsDelegate(notify);
-        var lang = Application.getApp().getProperty("lang");
+        var lang = Application.Properties.getValue("lang");
         if(page == 1) {
             newView = new JwsView(lang);
         }   
         else if(page == 2) {
             newView = new DetailsView(lang);
+        } 
+        else if(page == 3) {
+            newView = new ForecastView(lang);
         } 
         else
         {
@@ -57,7 +60,7 @@ class JwsDelegate extends WatchUi.BehaviorDelegate {
                 Storage.setValue("02wsjson", data);
             }
             else {
-                Application.getApp().setProperty("02wsjson", data);
+                Application.Properties.setValue("02wsjson", data);
             }
             
             notify.invoke(data);
@@ -69,7 +72,7 @@ class JwsDelegate extends WatchUi.BehaviorDelegate {
                 notify.invoke(Storage.getValue("02wsjson"));
             }
             else{
-                notify.invoke(Application.getApp().getProperty("02wsjson"));
+                notify.invoke(Application.Properties.getValue("02wsjson"));
             }
             
         }
@@ -84,9 +87,9 @@ class JwsDelegate extends WatchUi.BehaviorDelegate {
                 var options = {                                             // set the options
                     :method => Communications.HTTP_REQUEST_METHOD_GET,      // set HTTP method
                     :headers => {                                           // set headers
-                            "Content-Type" => Communications.REQUEST_CONTENT_TYPE_URL_ENCODED},
+                            "Content-Type" => Communications.REQUEST_CONTENT_TYPE_JSON},
                                                                             // set response type
-                    :responseType => Communications.HTTP_RESPONSE_CONTENT_TYPE_URL_ENCODED
+                    :responseType => Communications.HTTP_RESPONSE_CONTENT_TYPE_JSON
                 };                                            // set the parameters
                
                 var responseCallback = method(:onReceive);                  // set responseCallback to

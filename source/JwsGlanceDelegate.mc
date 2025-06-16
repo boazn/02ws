@@ -4,11 +4,11 @@
 // Application Developer Agreement.
 //
 
-using Toybox.Communications;
-using Toybox.WatchUi;
-using Toybox.Application.Storage;
-using Toybox.System;
-using Toybox.Lang;
+import Toybox.Communications;
+import Toybox.WatchUi;
+import Toybox.Application.Storage;
+import Toybox.System;
+import Toybox.Lang;
 
 class JwsGlanceDelegate extends WatchUi.GlanceViewDelegate {
     var notify;
@@ -27,9 +27,9 @@ class JwsGlanceDelegate extends WatchUi.GlanceViewDelegate {
     }
     function switchView(pageNum) {
 
-        var newView = null;
+         var newView = null;
         var inputDelegate = new JwsDelegate(notify);
-        var lang = Application.getApp().getProperty("lang");
+        var lang = Application.Properties.getValue("lang");
         if(page == 1) {
             newView = new JwsView(lang);
         }   
@@ -103,7 +103,7 @@ class JwsGlanceDelegate extends WatchUi.GlanceViewDelegate {
                 Storage.setValue("02wsjson", data);
             }
             else {
-                Application.getApp().setProperty("02wsjson", data);
+                Application.Properties.setValue("02wsjson", data);
             }
             
             notify.invoke(data);
@@ -115,7 +115,7 @@ class JwsGlanceDelegate extends WatchUi.GlanceViewDelegate {
                 notify.invoke(Storage.getValue("02wsjson"));
             }
             else{
-                notify.invoke(Application.getApp().getProperty("02wsjson"));
+                notify.invoke(Application.Properties.getValue("02wsjson"));
             }
             
         }

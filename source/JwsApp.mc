@@ -19,7 +19,7 @@ class JwsApp extends Application.AppBase {
 
     // Return the initial view of your application here
     function getInitialView() as [Views] or [Views, InputDelegates] {
-         var lang = Application.getApp().getProperty("lang");
+         var lang = Application.Properties.getValue("lang");
         System.println("lang=" + lang);
         mView = new JwsView(lang);
         return [mView, new JwsDelegate(mView.method(:onReceive))];
@@ -27,10 +27,10 @@ class JwsApp extends Application.AppBase {
     }
     (:glance)
     function getGlanceView() {
-        var lang = Application.getApp().getProperty("lang");
+        var lang = Application.Properties.getValue("lang");
         var view = new JwsGlanceView(lang);
         var delegate = new JwsDelegate(view.method(:onReceive));
-        return [ view ];
+        return [ view];
     }
 
 }

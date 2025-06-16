@@ -1,21 +1,34 @@
 <resources>
     <drawables>
-        <bitmap id="logoc_eng" filename="../resources/images/logo_sun_eng.png" x="center" y="center"/>
-        <drawable-list id="MainBackground" background="Graphics.COLOR_LT_GRAY">
-            <shape type="rectangle" x="0" y="0" width="100%" height="20%" color="Graphics.COLOR_LT_GRAY"/>
+        <bitmap id="logoc_eng" filename="../resources/images/logo_sun_eng.png" x="center" y="center" scope="foreground"/>
+        <drawable-list id="MainBackground" background="Graphics.COLOR_TRANSPARENT" scope="glance">
+            <shape type="rectangle" x="0" y="0" width="100%" height="100%" color="Graphics.COLOR_TRANSPARENT"/>
         </drawable-list>
         <bitmap id="LauncherIcon" filename="../resources/images/logo5_glance.png" />
     </drawables>
     <properties>
-    <property id="appVersion" type="string">2.0.1</property>
-    <property id="lang" type="number">1</property>
-    <property id="CorF" type="string">C</property>
+        <property id="appVersion" type="string">3.2.1</property>
+        <property id="lang" type="number">1</property>
+        <property id="CorF" type="string">C</property>
+        <property id="02wsjson" type="string"></property>
     </properties>
     <strings>
-    <string id="AppName">02ws</string>
-    <string id="Mountain">Mountain</string>
-    <string id="Valley">Valley</string>
+    <string id="AppName">Jerusky</string>
+    <string id="Mountain">mountain</string>
+    <string id="Valley">valley</string>
+    <string id="Mountain1">הר</string>
+    <string id="Valley1">עמק</string>
+    <string id="Mountain0">mountain</string>
+    <string id="Valley0">valley</string>
     <string id="rain">rain</string>
+    <string id="rainchance0">rain chance</string>
+    <string id="rainchance1">סיכוי לגשם</string>
+    <string id="morning0">morning</string>
+    <string id="morning1">בוקר</string>
+    <string id="noon0">noon</string>
+    <string id="noon1">צהריים</string>
+    <string id="night0">night</string>
+    <string id="night1">לילה</string>
     <string id="language_label">Language:</string>
     <string id="language">Language</string>
     <string id="English">English</string>
@@ -46,21 +59,30 @@
     <layout id="MainLayout">
     <drawable id="MainBackground" />
     <bitmap id="logoc" filename="../resources/images/logo6.png" x="center" y="center"/>
-    <label id="DateLabel" x="center" y="10%" font="Gfx.FONT_SMALL" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_BLACK" />
-    <label id="TempLabel" x="50%" y="20%" font="Gfx.FONT_LARGE" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_BLACK" />
-    <label id="WindHumLabel" x="50%" y="32%" font="Gfx.FONT_SMALL" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_BLACK" />
-    <label id="RainLabel" x="50%" y="42%" font="Gfx.FONT_SMALL" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_BLACK" />
-    <text-area id="sigweatherText" font="Gfx.FONT_TINY" width="100%" height="45%" y="52%"  justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_BLACK" background="Gfx.COLOR_LT_GRAY" />
+    <label id="DateLabel" x="center" y="10%" font="Gfx.FONT_TINY" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_BLACK" background="Gfx.COLOR_LT_GRAY" />
+    <label id="TempLabel" x="50%" y="20%" font="Gfx.FONT_TINY" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_BLACK" background="Gfx.COLOR_LT_GRAY"/>
+    <label id="WindHumLabel" x="50%" y="44%" font="Gfx.FONT_TINY" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_BLACK" background="Gfx.COLOR_LT_GRAY" />
+    <label id="RainLabel" x="50%" y="52%" font="Gfx.FONT_TINY" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_BLACK" background="Gfx.COLOR_LT_GRAY" />
+    <text-area id="sigweatherText" font="Gfx.FONT_TINY" width="fill" height="50%" y="60%"  justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_BLACK" background="Gfx.COLOR_LT_GRAY" />
    </layout>
 
    <layout id="DetailsLayout">
    <drawable id="MainBackground" />
-    <bitmap id="logoDetailsLayout" filename="../resources/images/logo5_glance.png" x="center" y="center"/>
-        <label id="sigweatherTextDetails" font="Gfx.FONT_SMALL" x="50%" y="10%"  justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_BLACK" background="Gfx.COLOR_LT_GRAY" />
+    <bitmap id="logoDetailsLayout" filename="../resources/images/logo6.png" x="center" y="center"/>
+    <text-area id="sigweatherTextDetails" width="90%" height="fill" y="10%" x="center"  justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_BLACK" background="Gfx.COLOR_LT_GRAY" >
+    <fonts>
+    <font>Gfx.FONT_SMALL</font>
+    <font>Gfx.FONT_TINY</font>
+    <font>Gfx.FONT_XTINY</font>
+    </fonts>
+    </text-area>
    </layout>
-   <layout id="GlanceLayout">
-   <drawable id="MainBackground" />
-    <bitmap id="logoGlanceLayout" filename="../resources/images/logo5_glance.png" x="center" y="center"/>
-        <label id="sigweatherTextDetailsGlance" font="Gfx.FONT_SMALL" x="50%" y="10%"  justification="Gfx.TEXT_JUSTIFY_CENTER" />
+   <layout id="GlanceLayout" scope="glance">
+        <drawable id="MainBackground" />
+        <label id="sigweatherTextDetailsGlance" font="Gfx.FONT_SMALL" x="0" y="10%"  justification="Gfx.TEXT_JUSTIFY_LEFT" />
+        <label id="tempTextGlance" font="Gfx.FONT_LARGE" x="0" y="10"  justification="Gfx.TEXT_JUSTIFY_LEFT" />
+        <label id="humTextGlance" font="Gfx.FONT_GLANCE" x="50%" y="10"  justification="Gfx.TEXT_JUSTIFY_LEFT" />
+        <label id="windTextGlance" font="Gfx.FONT_GLANCE" x="50%" y="40%"  justification="Gfx.TEXT_JUSTIFY_LEFT" />
+        <label id="rainTextGlance" font="Gfx.FONT_TINY" x="50%" y="80%"  justification="Gfx.TEXT_JUSTIFY_LEFT" />
    </layout>
 </resources>
