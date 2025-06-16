@@ -91,7 +91,7 @@ class JwsGlanceView extends WatchUi.GlanceView {
          if (mTemp >= 10 and mTemp < 15)
             {return Graphics.COLOR_WHITE;}
          if (mTemp >= 15 and mTemp < 20)
-            {return Graphics.COLOR_WHITE;}
+            {return Graphics.COLOR_BLACK;}
          if (mTemp >= 20 and mTemp < 25)
             {return Graphics.COLOR_BLACK;}
          if (mTemp >= 25 and mTemp < 30)
